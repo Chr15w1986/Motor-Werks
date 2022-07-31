@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="masthead">
-    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+    <div class="px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
         <div class="d-flex justify-content-center">
             <div class="text-center">
                 <img class="mx-2" src="static/assets/images/mw-logo.png" alt="main Motor werks logo">
@@ -20,9 +20,8 @@
                 <a class="btn btn-secondary" href="#">Brake service/repair</a></li>
                 <a class="btn btn-secondary" href="#">Tyre replacement</a></li>
                 {% else %}
-                <h2 class="mx-auto mt-4 mb-3">We have taken the stress out of vehicle servicing, with our revolutionary
-                    5 tier system.
-                    <hr> Please login below to access your Motor-Werks account</h2>
+                <h2 class="mx-auto mt-3 mb-3">We have taken the stress out of vehicle servicing, with our revolutionary
+                    5 tier system. Please login below to access your Motor-Werks account</h2>
                 <a class="btn btn-secondary" href="{% url 'account_login' %}">Login</a>
                 {% endif %}
             </div>
