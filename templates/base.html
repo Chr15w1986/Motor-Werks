@@ -6,36 +6,85 @@
 <head>
 
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
     {% block corecss %}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-            integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'assets/images/favicon/site.webmanifest' %}" crossorigin="use-credentials">
     {% endblock %}
 
     {% block corejs %}
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/40ae6dc8bf.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
     {% endblock %}
 
-    
-    <title>Motor Werks</title>
+
+    <title>Motor-Werks</title>
 </head>
 
 <body>
-    <header></header>
-    
-    {% block content %}
-    {% endblock %}
+    <!-- Navigation section-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="{% url 'home' %}">Motor Werks</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="">A</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">B</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
 
-    <footer></footer>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link" href="">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </nav>
+
+    {% block content %}
+
+    <!-- Page content here -->
+
+    {% endblock content %}
+
+    <!-- Social links-->
+    <section class="contact-section bg-black">
+        <div class="social d-flex justify-content-center">
+            <a class="mx-2" href="https://twitter.com/?lang=en" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a class="mx-2" href="https://en-gb.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a class="mx-2" href="https://github.com/Chr15w1986/Motor-Werks" target="_blank"><i
+                    class="fab fa-github"></i></a>
+        </div>
+        <footer>
+            <div class="footer small text-center px-4 px-lg-5">Copyright &copy; C.Williams (CI Student) 2022
+            </div>
+        </footer>
+    </section>
+
 </body>
 
 </html>
