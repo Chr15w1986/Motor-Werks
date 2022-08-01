@@ -8,10 +8,6 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<div class="masthead">
-  <div class="container-fluid px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-    <div class="d-flex justify-content-center">
-      <div class="text-center">
         
         {% get_providers as socialaccount_providers %}
 
@@ -34,7 +30,7 @@
 
         {% else %}
         <p>{% blocktrans %}If you have not created an account yet, then please
-          <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+          <a href="{{ signup_url }}"><u>sign up</u></a> first.{% endblocktrans %}</p>
         {% endif %}
 
         <form class="login" method="POST" novalidate action="{% url 'account_login' %}">
@@ -46,8 +42,4 @@
           <br>
           <button class="primaryAction btn btn-secondary" type="submit">{% trans "Sign In" %}</button>
         </form>
-      </div>
-    </div>
-  </div>
-</div>
 {% endblock %}

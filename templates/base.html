@@ -32,7 +32,6 @@
     <script src="{% static 'js/scripts.js' %}"></script>
     {% endblock %}
 
-
     <title>Mötör-Werks</title>
 </head>
 
@@ -63,13 +62,22 @@
             {% endif %}
         </div>
     </nav>
+    <div class="masthead">
+        <div class="px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <img class="mx-2" src="/static/assets/images/mw-logo.png" alt="Motor werks logo">
 
-    {% block content %}
+                    {% block content %}
 
-    <!-- Page content here -->
+                    <!-- Page content here -->
 
-    {% endblock content %}
-
+                    {% endblock content %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Social links-->
     <section class="contact-section">
         <div class="social d-flex justify-content-center">

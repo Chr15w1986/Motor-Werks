@@ -2,32 +2,23 @@
 {% load static %}
 
 {% block content %}
-<div class="masthead">
-    <div class="px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-        <div class="d-flex justify-content-center">
-            <div class="text-center">
-                <img class="mx-2" src="static/assets/images/mw-logo.png" alt="main Motor werks logo">
-                <img class="main-image mx-auto mt-4 mb-3"
-                    src="static/assets/images/2014-audi-r8-v8-wallpaper-preview.jpg"
-                    alt="image of an audi r8 in the dark">
-                <br>
-                {% if request.user.is_authenticated %}
-                <h2 class="mx-auto mt-2 mb-2">Simply pick an option below,
-                    pay for your chosen service
-                    and we will come to you!</h2>
-                <a class="btn btn-secondary" href="#">Minor service</a></li>
-                <a class="btn btn-secondary" href="#">Major service</a></li>
-                <a class="btn btn-secondary" href="#">Suspension Repair</a></li>
-                <a class="btn btn-secondary" href="#">Brake service/repair</a></li>
-                <a class="btn btn-secondary" href="#">Tyre replacement</a></li>
-                {% else %}
-                <h2 class="mx-auto mt-3 mb-3">We have taken the stress out of vehicle servicing, with our revolutionary
-                    5 tier system. Please login below to access your Mötör-Werks account</h2>
-                <a class="btn btn-secondary" href="{% url 'account_login' %}">Login</a>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-</div>
+
+    <img class="main-image mx-auto mt-4 mb-3" src="static/assets/images/2014-audi-r8-v8-wallpaper-preview.jpg"
+        alt="image of an audi r8 in the dark">
+    <br>
+    {% if request.user.is_authenticated %}
+        <h2 class="mx-auto mt-2 mb-2">Simply pick an option below,
+        pay for your chosen service
+        and we will come to you!</h2>
+            <a class="btn btn-secondary" href="#">Minor service</a></li>
+            <a class="btn btn-secondary" href="#">Major service</a></li>
+            <a class="btn btn-secondary" href="#">Suspension Repair</a></li>
+            <a class="btn btn-secondary" href="#">Brake service/repair</a></li>
+            <a class="btn btn-secondary" href="#">Tyre replacement</a></li>
+    {% else %}
+        <h2 class="mx-auto mt-3 mb-3">We have taken the stress out of vehicle servicing, with our revolutionary
+            5 tier system. Please login below to access your Mötör-Werks account</h2>
+        <a class="btn btn-secondary" href="{% url 'account_login' %}">Login</a>
+    {% endif %}
 
 {% endblock %}
