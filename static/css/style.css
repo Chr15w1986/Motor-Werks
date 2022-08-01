@@ -195,12 +195,12 @@ p {
 
 /*------------------------------ Link overrides */
 a {
-  color: #5e5d5c;
+  color: #8daa91;
   text-decoration: none;
 }
 
 a:hover {
-  color: #8daa91;
+  color: #788475;
 }
 
 /*------------------------------ Button styling (bootstrap override) */
