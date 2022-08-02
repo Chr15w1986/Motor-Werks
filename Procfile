@@ -1,0 +1,1 @@
+web: gunicorn motor_werks.wsgi:application
