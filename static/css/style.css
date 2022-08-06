@@ -200,6 +200,16 @@ p {
   }
 }
 
+.card-body {
+  background-color: #28112B;
+  color: #788475;
+  border-radius: 0 2rem 0 2rem;
+}
+
+.card {
+  border: #788475;
+}
+
 /*------------------------------ Link overrides */
 a {
   color: #8daa91;
