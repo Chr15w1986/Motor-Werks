@@ -35,7 +35,7 @@ p {
 /*------------------------------ Image, Masthead and headings with media queries */
 .main-image {
   border-radius: 4rem;
-  height: 25rem;
+  height: 22rem;
   width: 32rem;
   opacity: 0.6;
 }
