@@ -1,12 +1,11 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from .models import Services
 
 
 class ServicesView(ListView):
-    template_name = 'services/services.html'
     model = Services
-    context_object_name = 'services'
-
-    def get_queryset(self):
-        return Services.objects.all()
+    template_name = 'services/major.html'
+    success_url = reverse_lazy('major')
+    queryset = Services.objects.all().order_by('service_name')

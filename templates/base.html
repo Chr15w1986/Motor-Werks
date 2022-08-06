@@ -51,13 +51,14 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     {% if request.user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" href="">A</a></li>
-                    <li class="nav-item"><a class="nav-link" href="">B</a></li>
+                    
                     <li class="nav-item"><a class="nav-link" href="">My Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">My orders</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Basket</a></li>
 
                     {% else %}
-                    <li class="nav-item"><a class="nav-link" href="">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'account_login' %}">Login</a></li>
                 </ul>
@@ -69,7 +70,6 @@
         <div class="px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
             <div class="d-flex justify-content-center">
                 <div class="text-center">
-                    <img class="mx-2" src="/static/assets/images/mw-logo.png" alt="Motor werks logo">
 
                     {% block content %}
 
