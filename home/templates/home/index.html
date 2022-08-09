@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-    <img class="mx-2" src="/static/assets/images/mw-logo.png" alt="Motor werks logo">
-    <img class="main-image mx-auto mt-4 mb-3" src="static/assets/images/2014-audi-r8-v8-wallpaper-preview.jpg"
+    <img class="mx-2" src="{% static 'assets/images/mw-logo.png' %}" alt="Motor werks logo">
+    <img class="main-image mx-auto mt-4 mb-3" src="{% static 'assets/images/2014-audi-r8-v8-wallpaper-preview.jpg' %}"
         alt="image of an audi r8 in the dark">
     <br>
     {% if request.user.is_authenticated %}
