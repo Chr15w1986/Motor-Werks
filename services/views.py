@@ -8,4 +8,4 @@ class ServicesView(ListView):
     model = Services
     template_name = 'services/major.html'
     success_url = reverse_lazy('major')
-    queryset = Services.objects.all().order_by('service_name')
+    context_object_name = 'services'
