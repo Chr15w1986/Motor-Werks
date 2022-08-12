@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<a class="btn btn-secondary" href="{% url 'account_login' %}">Login</a>
+<h2 class="mx-auto mt-2 mb-2">Simply pick an option below,
+    pay for your chosen service
+    and we will come to you!</h2>
+        <a class="btn btn-secondary" href="">Minor service</a></li>
+        <a class="btn btn-secondary" href="">Major service</a></li>
+        <a class="btn btn-secondary" href="">Suspension Repair</a></li>
+        <a class="btn btn-secondary" href="">Brake service/repair</a></li>
+        <a class="btn btn-secondary" href="">Tyre replacement</a></li><hr>
+<a class="btn btn-danger" href="{% url 'home' %}">GO BACK</a>
+
+
+{% endblock %}
