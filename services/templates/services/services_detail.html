@@ -3,19 +3,16 @@
 
 {% block content %}
 
-{% for service in services %}
-
 <div class="row mt-3">
     <div class="col">
         <div class="card-body">
-            <h5 class="card-title">{{ service.servicename }}</h5>
-            <p class="card-text">{{ service.description }}</p>
-            <p class="card-text">Price - £{{ service.price }}</p>
+            <h3 class="card-title">{{ services.service_name }}</h3>
+            <p class="card-text">{{ services.description }}</p>
+            <p class="card-text">Price - £{{ services.price }}</p>
             <a href="#" class="btn btn-success">Pay Now</a>
         </div>
     </div>
 </div>
 <a class="btn btn-danger" href="{% url 'home' %}">GO BACK</a>
-{% endfor %}
 
 {% endblock %}
