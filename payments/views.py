@@ -33,7 +33,7 @@ def stripe_config(request):
 def create_checkout_session(request):
 
     if request.method == 'GET':
-        domain_url = 'localhost:8000'
+        domain_url = settings.DOMAIN_URL
         stripe.api_key = settings.STRIPE_SECRET_KEY
         try:
             checkout_session = stripe.checkout.Session.create(
