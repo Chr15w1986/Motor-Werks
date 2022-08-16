@@ -9,7 +9,7 @@
             <h3 class="card-title">{{ services.service_name }}</h3>
             <p class="card-text">{{ services.description }}</p>
             <p class="card-text">Price - £{{ services.price }}</p>
-            <a href="#" class="btn btn-success">Pay Now</a>
+            <a href="{% url 'payments' %}" class="btn btn-success">Buy Now!</a>
         </div>
     </div>
 </div>

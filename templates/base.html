@@ -1,6 +1,6 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -33,6 +33,7 @@
     </script>
     <script src="https://kit.fontawesome.com/40ae6dc8bf.js" crossorigin="anonymous"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
     <title>Mötör-Werks</title>
@@ -51,11 +52,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     {% if request.user.is_authenticated %}
-                    
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="">My Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
-                    <li class="nav-item"><a class="nav-link" href="">My orders</a></li>
-                    <li class="nav-item"><a class="nav-link" href="">Basket</a></li>
 
                     {% else %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>

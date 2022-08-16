@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<section class="section">
+    <div class="container">
+        <h4>Please confirm if you wish to continue with your purchase</h4>
+        <button class="btn btn-success" id="confirmBtn">Confirm purchase</button>
+    </div>
+    <br>
+    <a class="btn btn-danger" href="{% url 'services' %}">Cancel</a>
+</section>
+
+
+{% endblock %}

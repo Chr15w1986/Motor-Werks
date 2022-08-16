@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <h3>Your payment has been successful.</h3>
+        <br>
+        <a class="btn btn-secondary" href="{% url 'home' %}">GO HOME</a>
+    </div>
+</section>
+
+
+{% endblock %}
