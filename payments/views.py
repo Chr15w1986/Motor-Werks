@@ -1,9 +1,10 @@
 """ Payments app views file """
+
+import stripe
 from django.conf import settings
 from django.http.response import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import TemplateView
-import stripe
 
 
 class PaymentsView(TemplateView):
@@ -43,9 +44,8 @@ def create_checkout_session(request):
                 mode='payment',
                 line_items=[
                     {
-                        'price': '',
+                        'price': settings.STRIPE_PRICE_ID,
                         'quantity': 1,
-                        'currency': 'gbp',
                     }
                 ],
                 customer_email=request.user.email
