@@ -58,15 +58,19 @@ fetch("/payments/config/")
   const stripe = Stripe(data.publicKey);
 
     // Event handler
-    document.querySelector("#confirmBtn").addEventListener('click', () => {
+    document.querySelector("#confirmBtn").addEventListener("click", () => {
         // Get Checkout Session ID
         fetch("/payments/create-checkout-session/")
         .then((result) => { return result.json(); })
         .then((data) => {
+            // If route passed error, throw an Error. 
+            if (data.error) {
+              throw Error(data.error);
+          } else {
             // Redirect to Stripe Checkout
             return stripe.redirectToCheckout({sessionId: data.sessionId});
-            }
-        )
+          }
+        })
         .then((res) => {
         console.log(res);
         });
