@@ -13,5 +13,35 @@
     <a class="btn btn-danger" href="{% url 'services' %}">Cancel</a>
 </section>
 
+<script>
+    // Stripe payments script JS taken from TestDriven.io
+// Get stripe publishable key
+fetch("/payments/config/")
+.then((result) => { return result.json(); })
+.then((data) => {
+  // Initialize Stripe.js
+  const stripe = Stripe(data.publicKey);
+
+    // Event handler
+    document.querySelector("#confirmBtn").addEventListener("click", () => {
+        // Get Checkout Session ID
+        fetch("/payments/create-checkout-session/?pk={{ object.id }}")
+        .then((result) => { return result.json(); })
+        .then((data) => {
+            // If route passed error, throw an Error. 
+            if (data.error) {
+              throw Error(data.error);
+          } else {
+            // Redirect to Stripe Checkout
+            return stripe.redirectToCheckout({sessionId: data.sessionId});
+          }
+        })
+        .then((res) => {
+        console.log(res);
+        });
+    });
+});
+</script>
+
 
 {% endblock %}
