@@ -5,6 +5,7 @@ from django.conf import settings
 from django.http.response import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import TemplateView
+from services.models import Services
 
 
 class PaymentsView(TemplateView):
@@ -31,11 +32,12 @@ def stripe_config(request):
 
 @csrf_exempt
 # Taken from Testdriven.io
-def create_checkout_session(request):
+def create_checkout_session(request, pk=1):
 
     if request.method == 'GET':
         domain_url = settings.DOMAIN_URL
         stripe.api_key = settings.STRIPE_SECRET_KEY
+        service = Services.objects.get(pk=pk)
         try:
             checkout_session = stripe.checkout.Session.create(
                 success_url=domain_url + 'payments/success?session_id={CHECKOUT_SESSION_ID}',
@@ -44,11 +46,7 @@ def create_checkout_session(request):
                 mode='payment',
                 line_items=[
                     {
-                        'price': (settings.STRIPE_PRICE_ID1,
-                                  settings.STRIPE_PRICE_ID2,
-                                  settings.STRIPE_PRICE_ID3,
-                                  settings.STRIPE_PRICE_ID4,
-                                  settings.STRIPE_PRICE_ID5,),
+                        'price': service.price_id,
                         'quantity': 1,
                     }
                 ],
