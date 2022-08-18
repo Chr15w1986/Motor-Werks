@@ -32,7 +32,7 @@ def stripe_config(request):
 
 @csrf_exempt
 # Taken from Testdriven.io
-def create_checkout_session(request, pk):
+def create_checkout_session(request, pk=1):
 
     if request.method == 'GET':
         domain_url = settings.DOMAIN_URL
