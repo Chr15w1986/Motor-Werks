@@ -39,8 +39,6 @@ def create_checkout_session(request):
         stripe.api_key = settings.STRIPE_SECRET_KEY
         # Extract the PK from the GET Pararameter (?pk=)
         service = Services.objects.get(pk=request.GET['pk'])
-
-        print(request.GET['pk'])
         try:
             checkout_session = stripe.checkout.Session.create(
                 success_url=domain_url + 'payments/success?session_id={CHECKOUT_SESSION_ID}',
