@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<p>{% trans 'Are you sure you want to sign out' %} {{ user.username }}?</p>
+<h3>{% trans 'Are you sure you want to sign out' %}<br>{{ user.username }}?</h3>
 
 <form method="post" action="{% url 'account_logout' %}">
   {% csrf_token %}
@@ -15,6 +15,5 @@
   {% endif %}
   <button class="btn btn-secondary" type="submit">{% trans 'Sign Out' %}</button>
 </form>
-
 
 {% endblock %}

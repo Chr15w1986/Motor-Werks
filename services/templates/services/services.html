@@ -2,25 +2,27 @@
 {% load static %}
 
 {% block content %}
-{% if request.user.is_authenticated %}
-<h2 class="mx-auto mt-2 mb-2">Simply pick an option below,
-    pay for your chosen service
-    and we will come to you!</h2>
-{% for object in object_list %}
-<a class="btn btn-secondary" href="{% url 'services_detail' object.id %}">{{ object }}</a></li>
-
-{% endfor %}
-<br>
-<a class="btn btn-danger" href="{% url 'services' %}">GO BACK</a>
-{% else %}
-{% for object in object_list %}
-<a class="btn btn-secondary" href="{% url 'services_detail' object.id %}">{{ object }}</a></li>
-
-{% endfor %}
-<br>
-<a class="btn btn-secondary" href="{% url 'account_login' %}">Login</a>
-{% endif %}
-
-
+    {% if request.user.is_authenticated %}
+        <img src="{% static 'assets/images/mw-logo.png' %}" alt="Motor-Werks logo">
+        <br>
+        <h2 class="mx-auto mt-2 mb-2">Simply pick an option below,
+                                      pay for your chosen service
+                                      and we will come to you!</h2>
+        
+    {% for object in object_list %}
+        <a class="btn btn-secondary" href="{% url 'services_detail' object.id %}">{{ object }}</a></li>
+    {% endfor %}
+        <br>
+        <a class="btn btn-danger" href="{% url 'services' %}">GO BACK</a>
+    {% else %}
+    
+        <img src="{% static 'assets/images/mw-logo.png' %}" alt="Motor-Werks logo">
+        <br>
+    {% for object in object_list %}
+        <a class="btn btn-secondary" href="{% url 'services_detail' object.id %}">{{ object }}</a></li>
+    {% endfor %}
+        <br>
+        <a class="btn btn-secondary" href="{% url 'account_login' %}">Login</a>
+    {% endif %}
 
 {% endblock %}
