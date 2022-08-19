@@ -5,7 +5,7 @@
 
 <section class="section">
     <div class="container">
-        <h3>Sorry, Your payment failed.</h3>
+        <h3>Sorry {{ user.username }}, Your payment failed.</h3>
         <br>
         <a class="btn btn-secondary" href="{% url 'home' %}">GO HOME</a>
     </div>
