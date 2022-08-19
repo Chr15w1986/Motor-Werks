@@ -30,3 +30,4 @@ urlpatterns = [
 HANDLER500 = "motor_werks.views.custom_500_error"
 HANDLER404 = "motor_werks.views.custom_page_not_found"
 HANDLER403 = "motor_werks.views.custom_403_error"
+HANDLER405 = "motor_werks.views.custom_405_error"

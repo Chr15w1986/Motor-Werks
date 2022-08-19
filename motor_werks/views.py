@@ -14,6 +14,12 @@ def custom_500_error(request, exception):
     return render(request, 'templates/500.html', data)
 
 
+def custom_405_error(request, exception):
+    """ 405 error view """
+    data = {}
+    return render(request, 'templates/405.html', data)
+
+
 def custom_403_error(request, exception):
     """ 403 error view """
     data = {}
