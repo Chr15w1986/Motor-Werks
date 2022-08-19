@@ -24,3 +24,9 @@ urlpatterns = [
     path('payments/', include('payments.urls')),
     path('profiles/', include('profiles.urls')),
 ]
+
+""" Error handler URL's """
+
+HANDLER500 = "motor_werks.views.custom_500_error"
+HANDLER404 = "motor_werks.views.custom_page_not_found"
+HANDLER403 = "motor_werks.views.custom_403_error"
