@@ -218,6 +218,7 @@ else:
 # Stripe Payments settings
 STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+STRIPE_ENDPOINT_SECRET = os.environ.get('STRIPE_ENDPOINT_SECRET')
 DOMAIN_URL = os.environ.get('DOMAIN_URL')
 
 
