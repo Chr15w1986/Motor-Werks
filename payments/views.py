@@ -32,12 +32,15 @@ def stripe_config(request):
 
 @csrf_exempt
 # Taken from Testdriven.io
-def create_checkout_session(request, pk=5):
+def create_checkout_session(request):
 
     if request.method == 'GET':
         domain_url = settings.DOMAIN_URL
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        service = Services.objects.get(pk=pk)
+        # Extract the PK from the GET Pararameter (?pk=)
+        service = Services.objects.get(pk=request.GET['pk'])
+
+        print(request.GET['pk'])
         try:
             checkout_session = stripe.checkout.Session.create(
                 success_url=domain_url + 'payments/success?session_id={CHECKOUT_SESSION_ID}',

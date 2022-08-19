@@ -25,7 +25,8 @@ fetch("/payments/config/")
     // Event handler
     document.querySelector("#confirmBtn").addEventListener("click", () => {
         // Get Checkout Session ID
-        fetch("/payments/create-checkout-session/?pk={{ object.id }}")
+        // Pass in the pk from the URL
+        fetch("/payments/create-checkout-session/?pk={{ request.GET.pk }}")
         .then((result) => { return result.json(); })
         .then((data) => {
             // If route passed error, throw an Error. 
