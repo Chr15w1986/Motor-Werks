@@ -44,6 +44,10 @@ p {
   padding: 5px;
 }
 
+.border {
+  border-radius: 0 0 0 2rem;
+}
+
 /*------------------------------ Image, Masthead and headings with media queries */
 .main-image {
   border-radius: 4rem;
