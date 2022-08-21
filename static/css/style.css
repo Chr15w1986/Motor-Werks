@@ -72,7 +72,7 @@ p {
   font-family: "Uchen";
   font-size: 1rem;
   line-height: 1.2rem;
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.05rem;
 }
 
 .masthead h2,
@@ -115,6 +115,7 @@ p {
   .masthead .h1 {
     font-size: 1rem;
     line-height: 1.2rem;
+    letter-spacing: 0.05rem;
   }
 }
 
@@ -122,13 +123,14 @@ p {
   .masthead {
     height: 100vh;
     padding: 0;
+    letter-spacing: 0.05rem;
   }
 
   .masthead h1,
   .masthead .h1 {
     font-size: 1.4rem;
     line-height: 1.5rem;
-    letter-spacing: 0.15rem;
+    letter-spacing: 0.05rem;
   }
 
   .masthead h2,
