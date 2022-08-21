@@ -37,6 +37,13 @@ p {
   color: #8daa91;
 }
 
+.border-dark {
+  border-radius: 0 2rem 0 0;
+  color: #8daa91;
+  background-color: #28112B;
+  padding: 5px;
+}
+
 /*------------------------------ Image, Masthead and headings with media queries */
 .main-image {
   border-radius: 4rem;
