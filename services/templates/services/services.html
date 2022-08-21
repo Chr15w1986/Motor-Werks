@@ -13,6 +13,7 @@
         <a class="btn btn-secondary" href="{% url 'services_detail' object.id %}">{{ object }}</a></li>
     {% endfor %}
         <br>
+        <hr>
         <a class="btn btn-danger" href="{% url 'services' %}">GO BACK</a>
     {% else %}
     
@@ -22,7 +23,8 @@
         <a class="btn btn-secondary" href="{% url 'services_detail' object.id %}">{{ object }}</a></li>
     {% endfor %}
         <br>
-        <a class="btn btn-secondary" href="{% url 'account_login' %}">Login</a>
+        <hr>
+        <a class="btn btn-secondary login" href="{% url 'account_login' %}">Login</a>
     {% endif %}
 
 {% endblock %}

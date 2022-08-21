@@ -11,13 +11,16 @@
         <h2 class="mx-auto mt-2 mb-2">View our available services below,
         pay for your chosen service
         and we will come to you!</h2>
+        <hr>
         <a class="btn btn-secondary" href="{% url 'services' %}">Services we offer</a>
    
     
     {% else %}
-        <h2 class="mx-auto mt-3 mb-3">We have taken the stress out of vehicle servicing, with our revolutionary
-            5 tier system. Please login below to access your Mötör-Werks account</h2>
-        <a class="btn btn-secondary" href="{% url 'account_login' %}">Login</a>
+        <h2 class="mx-auto mt-3 mb-3">Welcome to <strong>Mötör-Werks</strong>, mobile vehicle repairs and servicing.
+            We have taken the stress out with our revolutionary
+            5 tier system. Please login below to access your <strong>Mötör-Werks</strong> account</h2>
+            <hr>
+        <a class="btn btn-secondary login" href="{% url 'account_login' %}">Login</a>
         <a class="btn btn-secondary" href="{% url 'services' %}">Services we offer</a>
     {% endif %}
 
