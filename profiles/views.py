@@ -1,9 +1,8 @@
 """ Profile app views """
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views.generic.base import TemplateView
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserUpdateForm, ProfileUpdateForm
+from .forms import UserForm
 
 
 class ProfileView(TemplateView):
@@ -11,25 +10,10 @@ class ProfileView(TemplateView):
 
 
 @login_required
-def profile(request):
-    if request.method == 'POST':
-        u_form = UserUpdateForm(request.POST, instance=request.user)
-        p_form = ProfileUpdateForm(request.POST,
-                                   request.FILES,
-                                   instance=request.user.profile)
-        if u_form.is_valid() and p_form.is_valid():
-            u_form.save()
-            p_form.save()
-            messages.success(request, f'{"Your account has been updated!"}')
-            return redirect('profiles/profile.html')
+def userpage(request):
+    user_form = UserForm(instance=request.user)
 
-    else:
-        u_form = UserUpdateForm(instance=request.user)
-        p_form = ProfileUpdateForm(instance=request.user.profile)
-
-    context = {
-        'u_form': u_form,
-        'p_form': p_form
-    }
-
-    return render(request, 'profiles/profile.html', context)
+    return render(
+                  request=request, template_name="profiles/profile.html",
+                  context={"user": request.user, "user_form": user_form, }
+        )
