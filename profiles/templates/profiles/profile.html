@@ -4,31 +4,33 @@
 
 {% block content %}
 
+{% if request.user.is_authenticated %}
 <div class="content-section">
-  <h1 class="mb-3 border border-dark">Username: {{ user.username }}</h1>
-  <div>
-    <div class="card-body">
-      <h2 class="mx-auto">Full Name: {{ user.userprofile.first_name }} {{ user.userprofile.last_name }}</h2>
-      <hr>
-      <h5 class="mx-auto mt-3 mb-2">Vehicle Registration: {{ user.userprofile.vehicle_reg }}</h5>
-      <h5 class="mx-auto mt-3 mb-2">Email: {{ user.email }}</h5>
-      <h5 class="mx-auto mt-3 mb-2">Address: <br>{{ user.userprofile.street_address1 }}<br>
-                                             {{ user.userprofile.street_address2 }}<br>
-                                             {{ user.userprofile.town_or_city }}<br>
-                                             {{ user.userprofile.county }}<br>
-                                             {{ user.userprofile.postcode }}<br>
-                                             {{ user.userprofile.phone_number }}</h5>      
-      <form action="." method="post" novalidate enctype="multipart/form-data">
-        {% csrf_token %}
-        <fieldset class="form-group">
-          {{ u_form|crispy }}
-        </fieldset>
-        <div class="form-group">
-          <button class="btn btn-success" type="submit">Update</button>
-        </div>
-      </form>
-    </div>
-  </div>
+  	<h1 class="mb-2 border-dark">Username: {{ user.username }}</h1>
+		<p class="mx-auto mt-2 mb-1 border-dark px-5">  Full name: {{ user.userprofile.first_name }} {{ user.userprofile.last_name }}</p>
+		<p class="mx-auto mt-2 mb-1 border-dark">       Registration: {{ user.userprofile.vehicle_reg }}</p>
+		<p class="mx-auto mt-2 mb-1 border-dark px-5">  Email: {{ user.userprofile.email }}</p>
+		<p class="mx-auto mt-2 mb-1 border-dark">       Phone: {{ user.userprofile.phone_number }}</p>
+		<p class="mx-auto mt-2 mb-1 border border-dark">Address:<br>{{ user.userprofile.street_address1 }}<br>
+														{{ user.userprofile.street_address2 }}<br>
+														{{ user.userprofile.town_or_city }}<br>
+														{{ user.userprofile.county }}<br>
+														{{ user.userprofile.postcode }}<br>
+														</p>   
+      	<form action="." method="POST" novalidate enctype="multipart/form-data">
+        	{% csrf_token %}
+        	<fieldset class="form-group">
+          	{{ userform|crispy }}
+        	</fieldset>
+        	<div class="form-group">
+          	<button class="btn btn-success" type="submit">Update profile</button>
+        	</div>
+      	</form>
 </div>
+
+{% else %}
+ <h1>Please login to view your profile</h1>
+ <a class="btn btn-secondary login" href="{% url 'account_login' %}">Login</a>
+{% endif %}
 
 {% endblock content %}
