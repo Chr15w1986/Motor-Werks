@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /payments/
+Disallow: /profiles/
+Sitemap: https://motor-werks.herokuapp.com/sitemap.xml
