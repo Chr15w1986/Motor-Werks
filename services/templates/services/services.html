@@ -3,11 +3,9 @@
 
 {% block content %}
     {% if request.user.is_authenticated %}
-        <img src="{% static 'assets/images/mw-logo.png' %}" alt="Motor-Werks logo">
+        <img class="mb-2" src="{% static 'assets/images/mw-logo.png' %}" alt="Motor-Werks logo">
         <br>
-        <h2 class="mx-auto mt-2 mb-2">Simply pick an option below,
-                                      pay for your chosen service
-                                      and we will come to you!</h2>
+        <h1 class="mx-auto mt-2 mb-2">What can we do for you today?</h1>
         
     {% for object in object_list %}
         <a class="btn btn-secondary" href="{% url 'services_detail' object.id %}">{{ object }}</a></li>
