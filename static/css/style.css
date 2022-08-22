@@ -50,9 +50,9 @@ p {
 
 /*------------------------------ Image, Masthead and headings with media queries */
 .main-image {
-  border-radius: 4rem;
-  height: 22rem;
-  width: 32rem;
+  border-radius: 0.5rem 4rem 0.5rem 4rem;
+  height: 20rem;
+  width: 30rem;
   opacity: 0.6;
 }
 
@@ -100,7 +100,6 @@ p {
 
 @media (max-width: 550px) {
   .main-image {
-      border-radius: 4rem;
       height: 18rem;
       width: 25rem;
       opacity: 0.6;
@@ -173,7 +172,8 @@ p {
 #mainNav {
   min-height: 3.5rem;
   background-color: #28112B;
-  opacity: 0.9;
+  opacity: 0.8;
+  border-radius: 0 0 0 4rem;
 }
 
 #mainNav .navbar-toggler {
@@ -213,7 +213,7 @@ p {
   #mainNav .nav-link {
     transition: none;
     padding: 2rem 1.5rem;
-    color: rgba(255, 255, 255, 0.5);
+    
   }
 
   #mainNav .nav-link:hover {
@@ -229,7 +229,7 @@ p {
   }
 
   #mainNav.navbar-shrink .navbar-brand {
-    color: #bdd6db;
+    color: #8daa91;
   }
 
   #mainNav.navbar-shrink .nav-link {
@@ -275,15 +275,6 @@ a:hover {
   border-color: #000;
 }
 
-.btn-sm {
-  padding: 0.2rem 0.3rem;
-  font-size: 0.95rem;
-  border-radius: 0.2rem;
-  width: 5.5rem;
-  border: 0;
-  letter-spacing: 0.05rem;
-}
-
 .btn {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1);
   padding: 1rem 0.8rem;
@@ -292,6 +283,7 @@ a:hover {
   margin-top: 15px;
   letter-spacing: 0.1rem;
   border: 0;
+  border-radius: 0 1rem 0 1rem;
 }
 
 .login {
@@ -302,24 +294,26 @@ a:hover {
 label {
   display: inline-block;
   font-size: 25px;
-  color: #bdd6db;
+  color: #fff;
   padding-top: 10px;
   padding-bottom: 5px;
 }
 
 label.requiredField {
   font-size: 25px;
-  color: #bdd6db;
+  color: #8daa91;
   padding-top: 5px;
   padding-bottom: 3px;
 }
 
 .textinput {
-  border-radius: 10px;
+  border-radius: 0 1rem 0 1rem;
   min-width: 180px;
-  width: 80%;
-  height: 40px;
+  width: 82%;
+  height: 35px;
   text-align: center;
+  color: #fff;
+  background-color: #fff;
 }
 
 /*------------------------------ Social/contact links */
@@ -341,9 +335,9 @@ label.requiredField {
   height: 3rem;
   width: 4rem;
   background: linear-gradient(to top, rgba(94, 93, 92, 0.3) 0%, rgba(69, 54, 67, 0.7) 75%, #000 100%);
-  border-radius: 5%;
+  border-radius: 0 1rem 0 1rem;
   line-height: 3rem;
-  color: rgba(141, 170, 145, 0.6);
+  color: #8daa91;
 }
 
 .contact-section .social a:hover {
@@ -358,6 +352,6 @@ label.requiredField {
 /*------------------------------ Footer styling */
 .footer {
   padding: 1.5rem;
-  color: #788475;
+  color: #8daa91;
   background-color: #28112B;
 }
