@@ -294,7 +294,7 @@ a:hover {
 label {
   display: inline-block;
   font-size: 25px;
-  color: #fff;
+  color: #8daa91;
   padding-top: 10px;
   padding-bottom: 5px;
 }
@@ -312,8 +312,13 @@ label.requiredField {
   width: 82%;
   height: 35px;
   text-align: center;
-  color: #fff;
+  color: #000;
   background-color: #fff;
+}
+
+.modal-content {
+  background-color: #7a5e76;
+  border-radius: 0 2rem 0 2rem;
 }
 
 /*------------------------------ Social/contact links */
