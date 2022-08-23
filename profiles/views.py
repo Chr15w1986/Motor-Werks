@@ -23,10 +23,10 @@ class ProfileView(TemplateView):
 class UpdateProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
     model = UserProfile
-    fields = ('vehicle_reg',
-              'first_name',
+    fields = ('first_name',
               'last_name',
               'email',
+              'vehicle_reg',
               'street_address1',
               'street_address2',
               'town_or_city',
