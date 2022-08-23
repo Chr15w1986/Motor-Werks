@@ -35,6 +35,7 @@ hr {
 p {
   margin-bottom: 1rem;
   color: #8daa91;
+  font-size: 16px;
 }
 
 .border-dark {
@@ -290,6 +291,43 @@ a:hover {
   min-width: 9rem;
 }
 
+/*------------------------------ Mailchimp overrides */
+#mc-embedded-subscribe {
+  width: 16rem !important;
+  margin: 0 !important;
+}
+
+#mc_embed_signup form {
+  padding: 0 !important;
+}
+
+#mc_embed_signup input {
+  border-radius: 0 1rem !important;
+  border: none !important;
+}
+
+#mc_embed_signup {
+  background: #28112b;
+  clear: left;
+  font: 14px Helvetica, Arial, sans-serif;
+}
+
+#mc-embedded-subscribe-form {
+  font-family: 'Uchen', serif;
+}
+
+#mc_embed_signup h2 {
+  font-size: 1.4rem !important;
+  font-weight: normal !important;
+  margin: 0 !important;
+  margin-bottom: 1rem !important;
+}
+
+#mc_embed_signup .mc-field-group input {
+  text-indent: 6% !important;
+  border-radius: 0 1.5rem 0 1.5rem !important;
+}
+
 /*------------------------------ Form styling */
 label {
   display: inline-block;
@@ -322,17 +360,18 @@ label.requiredField {
 }
 
 /*------------------------------ Social/contact links */
-.contact-section {
+/* .contact-section {
   position: relative;
   width: 100%;
   background: linear-gradient(to top, rgba(94, 93, 92, 0.3) 0%, rgba(69, 54, 67, 0.7) 75%, #000 100%);
   background-attachment: scroll;
   background-size: cover;
-}
+} */
 
 .contact-section .social {
-  margin-top: 0.1rem;
+  margin-top: 0.05rem;
   background-color: #28112B;
+  opacity: 0.8;
 }
 
 .contact-section .social a {
@@ -356,7 +395,8 @@ label.requiredField {
 
 /*------------------------------ Footer styling */
 .footer {
-  padding: 1.5rem;
+  padding: 1rem;
   color: #8daa91;
   background-color: #28112B;
+  opacity: 0.8;
 }
