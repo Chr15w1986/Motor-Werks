@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <h1>Please login or create an account to continue</h1>
+    <a class="btn btn-secondary login" href="{% url 'account_login' %}">Login</a>
+    <a class="btn btn-secondary login" href="{% url 'account_signup' %}">Sign up</a>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h1>Or view our available services</h1>
+    <a class="btn btn-secondary login" href="{% url 'services' %}">Services we offer</a>
+
+{% endblock content %}

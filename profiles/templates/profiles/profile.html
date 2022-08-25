@@ -22,6 +22,11 @@
 		<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#profileModal">Edit
 			Profile</button>
 	</div>
+	<div class="text-left">
+		<a href="{% url 'delete-profile' user.id %}">
+		<button type="button" class="btn btn-secondary">Delete
+			Profile</button></a>
+	</div>
 	<div class="modal fade" tabindex="-1" id="profileModal" role="dialog">
 		<div class="modal-dialog text-black" role="document">
 			<div class="modal-content">

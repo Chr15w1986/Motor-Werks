@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+<div>
+    <h1>Are you sure {{ user.username }}, you wish to delete your profile?</h1>
+</div>
+
+<div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+                <button type="submit" class="btn btn-secondary">CONFIRM</button>
+            
+        </form>
+            <a href="{% url 'home' %}">
+                <button type="button" class="btn btn-danger">Cancel</button>
+            </a>
+</div>
+
+{% else %}
+    <h1>Please login to view your profile</h1>
+    <a class="btn btn-secondary login" href="{% url 'account_login' %}">Login</a>
+{% endif %}
+
+{% endblock content %}

@@ -4,8 +4,10 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth import get_user_model
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
 from .forms import UserForm
 from .models import UserProfile
 
@@ -46,3 +48,25 @@ class UpdateProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         self.object = self.get_object()
         return self.object.user == self.request.user
+
+
+class DeleteProfile(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+
+    model = User
+    template_name = 'profiles/delete-profile.html'
+
+    def post(self, request, pk, *args, **kwargs):
+        user = get_object_or_404(User, pk=request.user.id)
+        user.delete()
+
+        return HttpResponseRedirect(reverse('delete-success'))
+
+    def test_func(self):
+        self.object = self.get_object()
+        return self.object == self.request.user
+
+
+class DeleteSuccess(TemplateView):
+
+    model = User
+    template_name = 'profiles/delete-success.html'
