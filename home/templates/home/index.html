@@ -7,10 +7,12 @@
         alt="image of an audi r8 in the dark">
         <br>
         {% if request.user.is_authenticated %}
-        <h1 class="mx-auto mt-2 mb-2">Welcome back, {{ user.username }}</h1>
-        <h1 class="mx-auto mt-2 mb-2">View our available services below,
+        <h1 class="mx-auto mt-2 mb-2">Welcome to <strong>Mötör-Werks</strong> <strong>{{ user.username }},</strong></h1>
+        <h1 class="mx-auto mt-2 mb-2">Choose from one of our available services below,
         pay for your chosen service
-        and we will come to you!</h1>
+        and we will come to you! 
+        <br>
+        It's as easy as that!</h1>
         <hr>
         <a class="btn btn-secondary" href="{% url 'services' %}">Services we offer</a>
    
