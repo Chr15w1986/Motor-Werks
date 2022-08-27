@@ -71,7 +71,16 @@ All functionality and development of this project were managed using **Trello** 
 <summary>Click to see wireframes:</summary>
 <br>
 
-
+[Home](static/assets/images/README-images/wireframes/Desktop-Home.png) <br>
+[Services](static/assets/images/README-images/wireframes/Desktop-services.png) <br>
+[Single service](static/assets/images/README-images/wireframes/Desktop-individual-service.png) <br>
+[Register](static/assets/images/README-images/wireframes/Desktop-signup.png) <br>
+[Login](static/assets/images/README-images/wireframes/Desktop-login.png) <br>
+[Home mobile](static/assets/images/README-images/wireframes/Mobile-home.png) <br>
+[Services mobile](static/assets/images/README-images/wireframes/Mobile-services.png) <br>
+[Single service mobile](static/assets/images/README-images/wireframes/Mobile-individual-services.png) <br>
+[Register mobile](static/assets/images/README-images/wireframes/Mobile-Signup.png) <br>
+[Login mobile](static/assets/images/README-images/wireframes/Mobile-Login.png) <br>
 
 </details>
 <br>
@@ -218,6 +227,7 @@ Press Enter. Your local clone will be created
 * All images have been compressed using [tinypng.com](https://tinypng.com/)
 
 * Main home screen image of an audi R8 in the dark, [wallpaperflare.com](https://www.wallpaperflare.com/audi-r8-v8-2014-audi-r8-coupe-car-wallpaper-bhfta)
+* Image of two chicks doing a burnout in a toy R8 for the error handler pages (bit of comedy.), [wallpaperflare.com](https://www.wallpaperflare.com/cars-chickens-chicks-chickens-audi-r8-burnout-sports-cars-audi-r8-v8-technology-vehicles-hd-art-wallpaper-sfbhn)
 * Motor-werks logo, [squarespace.com](https://static1.squarespace.com/static/5d3f253d3bb01d0001087e06/t/5d3f2734701cda00012936e4/1644943519357/)
 * Tool to remove the Motor-werks background to create transparent logo, [remove.bg](https://www.remove.bg/)
 * Background image of scratched/worn (border/surround), [pngwing.com](https://www.pngwing.com/en/free-png-bzkyg)
