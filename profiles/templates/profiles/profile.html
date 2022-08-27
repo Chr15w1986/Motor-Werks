@@ -5,51 +5,70 @@
 {% block content %}
 
 {% if request.user.is_authenticated %}
-<div class="content-section">
-	<h1 class="mb-1 border-dark">Username: {{ user.username }}</h1>
-	<p class="mx-auto mt-0 mb-1 border-dark px-5"> Full name: {{ user.userprofile.first_name }}
-		{{ user.userprofile.last_name }}</p>
-	<p class="mx-auto mt-0 mb-1 border-dark"> Registration: {{ user.userprofile.vehicle_reg }}</p>
-	<p class="mx-auto mt-0 mb-1 border-dark px-5"> Email: {{ user.userprofile.email }}</p>
-	<p class="mx-auto mt-0 mb-1 border-dark"> Phone: {{ user.userprofile.phone_number }}</p>
-	<p class="mx-auto mt-0 mb-1 border border-dark">Address:<br>{{ user.userprofile.street_address1 }}<br>
-		{{ user.userprofile.street_address2 }}<br>
-		{{ user.userprofile.town_or_city }}<br>
-		{{ user.userprofile.county }}<br>
-		{{ user.userprofile.postcode }}<br>
-	</p>
-	<div class="text-right">
-		<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#profileModal">Edit
-			Profile</button>
-	</div>
-	<div class="text-left">
-		<a href="{% url 'delete-profile' user.id %}">
-		<button type="button" class="btn btn-secondary">Delete
-			Profile</button></a>
-	</div>
-	<div class="modal fade" tabindex="-1" id="profileModal" role="dialog">
-		<div class="modal-dialog text-black" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title">Edit Profile</h5>
-					<button type="button" class="close rounded-3" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+<div class="container">
+	<div class="row">
+		<div class="col-12 col-md-6">
+			<h1 class="mb-1 border-dark">- Order history -</h1>
+			<p class="mx-auto mt-0 mb-1 border-dark"> Order date: {{ user.servicehistory.order_date }}</p>
+			<p class="mx-auto mt-0 mb-1 border-dark px-5"> Service type: {{ user.servicehistory.service_type }}</p>
+			<p class="mx-auto mt-0 mb-1 border-dark px-5"> Customer: {{ user.userprofile.first_name }}</p>
+			<p class="mx-auto mt-0 mb-1 border border-dark"> Registration: {{ user.userprofile.vehicle_reg }}</p>
+			<br>
+			<br>
+			<br>
+		</div>
+
+		<div class="col-12 col-md-6">
+			<div class="content-section">
+				<h1 class="mb-1 border-dark">Username: {{ user.username }}</h1>
+				<p class="mx-auto mt-0 mb-1 border-dark px-5"> Full name: {{ user.userprofile.first_name }}
+					{{ user.userprofile.last_name }}</p>
+				<p class="mx-auto mt-0 mb-1 border-dark"> Registration: {{ user.userprofile.vehicle_reg }}</p>
+				<p class="mx-auto mt-0 mb-1 border-dark px-5"> Email: {{ user.userprofile.email }}</p>
+				<p class="mx-auto mt-0 mb-1 border-dark"> Phone: {{ user.userprofile.phone_number }}</p>
+				<p class="mx-auto mt-0 mb-1 border border-dark">Address:<br>{{ user.userprofile.street_address1 }}<br>
+					{{ user.userprofile.street_address2 }}<br>
+					{{ user.userprofile.town_or_city }}<br>
+					{{ user.userprofile.county }}<br>
+					{{ user.userprofile.postcode }}<br>
+				</p>
+			
+				<div class="text-right">
+					<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#profileModal">Edit
+						Profile</button>
 				</div>
-				<div class="modal-body">
-					<form action="{% url 'update-profile' user.userprofile.id %}" method="post">
-						{% csrf_token %}
-						{{ form|crispy }}
+				<div class="text-left">
+					<a href="{% url 'delete-profile' user.id %}">
+					<button type="button" class="btn btn-secondary">Delete
+						Profile</button></a>
 				</div>
-				<div class="modal-footer">
-					<button type="submit" class="btn btn-success">Save changes</button>
-					</form>
-					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				<div class="modal fade" tabindex="-1" id="profileModal" role="dialog">
+					<div class="modal-dialog text-black" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Edit Profile</h5>
+								<button type="button" class="close rounded-3" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form action="{% url 'update-profile' user.userprofile.id %}" method="post">
+									{% csrf_token %}
+									{{ form|crispy }}
+							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-success">Save changes</button>
+								</form>
+								<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 
 {% else %}
 <h1>Please login to view your profile</h1>

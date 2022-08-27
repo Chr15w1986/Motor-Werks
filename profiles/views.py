@@ -3,27 +3,33 @@
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth import get_user_model
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView, View
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from .forms import UserForm
 from .models import UserProfile
+from services.models import ServiceHistory
 
 
 user = get_user_model()
 
 
-class ProfileView(TemplateView):
+class ProfileView(View):
     model = UserProfile
     form = UserForm
     template_name = 'profiles/profile.html'
     context = {'form': form}
 
+    def form_valid(self, form):
+        form.instance.booked_by = self.request.user
+        return super().form_valid(form)
+
 
 class UpdateProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-
+    """ Allows user to update personal profile
+        via a pop up modal"""
     model = UserProfile
     fields = ('first_name',
               'last_name',
@@ -50,8 +56,20 @@ class UpdateProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.object.user == self.request.user
 
 
-class DeleteProfile(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class ServiceHistory(View):
+    model = ServiceHistory
+    fields = ('order_date',
+              'service_type')
+    template_name = 'profiles/profile.html'
 
+    def get(self, request, *args, **kwargs):
+        user = UserProfile.objects.get(username=request.user.username)
+        history = ServiceHistory.objects.filter(user=user)
+        return render(request, self.template_name, {'user': user, 'history': history})
+
+
+class DeleteProfile(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """ Allows user to delete personal profile """
     model = User
     template_name = 'profiles/delete-profile.html'
 
@@ -67,6 +85,7 @@ class DeleteProfile(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 
 class DeleteSuccess(TemplateView):
-
+    """ Renders a template to show user the deletion
+        has been successful """
     model = User
     template_name = 'profiles/delete-success.html'
