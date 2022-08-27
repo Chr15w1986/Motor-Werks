@@ -124,7 +124,11 @@ The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, but
 #
 ## Future Features
 
-<!--  TO DO -->
+I would like to...
+
+1. Add an option for the user to purchase more than one service e.g with a basket or checkout system
+2. Add an online chat service to hone in on the specifics the customer needs e.g If the user purchased tyres, they could talk to me about brands or sizes
+3. Include a comments or ratings section that all users can see that could be linked to the service they bought
 
 #
 ## Languages Used
@@ -234,7 +238,15 @@ Press Enter. Your local clone will be created
 
 
 ## Acknowledgements
-<!-- TO DO -->
+
+- Code institute for the amazing Tutors on the course, Scott, Ger and Sean!
+- My brilliant Mentor Ben Kavanagh, [BAK2K3](https://github.com/BAK2K3) for his patience, excellent advice on my code, pushing me back on track
+    when I threatened to 'throw in the towel', taking time out of his own day and duties to answer ALL of my questions with absolute perfection, and just generally being a Python God! I cannot thank you enough!
+- Matt Bodden [MattBCoding](https://github.com/MattBCoding), Yet again for being an absolute genius at pointing out the obvious.
+Thanks Matt!
+- My family for their support, patience and testing
+- My wonderful Wife for being my personal spell checker/grammar police and for listening to me when I needed to blow off steam!
+- Everybody on Slack for tips, advice, quick fixes and support
 
 <!-- ISSUES -->
 white on white text apple iphone 11pro, XR and 13, fixed by setting text input colour to #000 black
