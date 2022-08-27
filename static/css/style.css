@@ -354,6 +354,12 @@ label.requiredField {
   background-color: #fff;
 }
 
+/* Fix for some IOS devices showing white text on white background 
+   within form fields, Specifically Apple Iphone 11pro, XR and 13 */
+input[type=text] { 
+  color: #000; 
+}
+
 .modal-content {
   background-color: #7a5e76;
   border-radius: 0 2rem 0 2rem;
