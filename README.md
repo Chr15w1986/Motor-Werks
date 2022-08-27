@@ -42,7 +42,17 @@ Take the stress out of vehicle servicing and repairs with our simple revolutiona
 <summary>Flowchart</summary>
 <br>
 
-![Motor-werks Flowchart](static/assets/img/)
+![Motor-werks Flowchart](static/assets/images/README-images/motor-werks-flowchart.png)
+</details>
+<br>
+
+**Motor-werks Entity Relationship Diagram (ERD)**
+
+<details>
+<summary>Database Schema</summary>
+<br>
+
+![Motor-werks ERD](static/assets/images/README-images/ERD.png)
 </details>
 <br>
 
