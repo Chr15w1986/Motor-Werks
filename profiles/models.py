@@ -6,16 +6,16 @@ from django.dispatch import receiver
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=40, null=True, blank=True)
-    last_name = models.CharField(max_length=40, null=True, blank=True)
-    email = models.CharField(max_length=40, null=True, blank=True)
-    street_address1 = models.CharField(max_length=80, null=True, blank=True)
-    street_address2 = models.CharField(max_length=80, null=True, blank=True)
-    town_or_city = models.CharField(max_length=40, null=True, blank=True)
-    county = models.CharField(max_length=80, null=True, blank=True)
-    postcode = models.CharField(max_length=20, null=True, blank=True)
-    phone_number = models.CharField(max_length=20, null=True, blank=True)
-    vehicle_reg = models.CharField(max_length=8, null=True, blank=True)
+    first_name = models.CharField(max_length=25, blank=False, default=None)
+    last_name = models.CharField(max_length=25, blank=False, default=None)
+    email = models.CharField(max_length=40, blank=False, default=None)
+    street_address1 = models.CharField(max_length=60, blank=False, default=None)
+    street_address2 = models.CharField(max_length=60, blank=True, default=None)
+    town_or_city = models.CharField(max_length=40, blank=False, default=None)
+    county = models.CharField(max_length=40, blank=False, default=None)
+    postcode = models.CharField(max_length=20, blank=False, default=None)
+    phone_number = models.CharField(max_length=20, blank=False, default=None)
+    vehicle_reg = models.CharField(max_length=8, blank=False, default=None)
 
     def __str__(self):
         return f'{self.user.username}'
