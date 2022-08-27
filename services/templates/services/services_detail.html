@@ -12,13 +12,15 @@
             {% if request.user.is_authenticated %}
             <!-- Pass the pk as a get parameter to the payments route -->
             <a href="{% url 'payments' %}?pk={{ services.id }}" id="confirmBtn" class="btn btn-success">Buy Now!</a>
+            {% else %}
+            <h1>Please login to purchase this service</h1>
+            <a class="btn btn-secondary login" href="{% url 'account_login' %}">Login</a>
             {% endif %}
         </div>
     </div>
 </div>
 <hr>
-<h1>Please login to purchase this service</h1>
-<a class="btn btn-secondary login" href="{% url 'account_login' %}">Login</a>
+
 <a class="btn btn-danger" href="{% url 'services' %}">GO BACK</a>
 
 {% endblock %}
