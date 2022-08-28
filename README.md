@@ -139,6 +139,28 @@ The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, but
 </details>
 <br>
 
+## Social Media Marketing
+
+  * For the purposes of the assessment a mock Facebook page was created to represent the company on a social media platform. 
+   - The Facebook page includes links to the Motor-werks website to drive traffic from the social network to the site. 
+   <details>
+  <summary>Social media buisness page</summary>
+  <br>
+
+  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(2).png)
+  <br>
+  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(3).png)
+  <br>
+  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(4).png)
+  <br>
+  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(1).png)
+  <br>
+  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(5).png)
+  <br>
+  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(6).png)
+  </details>
+  <br>
+
 #
 ## Existing Features
 ### **Home page**
@@ -306,9 +328,11 @@ I would like to...
 
 <img width="200" height="150" src="static/assets/images/README-images/python3.png"><img width="200" height="150" src="static/assets/images/README-images/html5.png"><img width="200" height="150" src="static/assets/images/README-images/css3.png"><img width="200" height="150" src="static/assets/images/README-images/js.png">
 
-## Frameworks, Libraries & Programs Used
+## Frameworks, Libraries, Programs and Technologies Used
 
 + Django 3.2: Framework used to add structure to the platform
++ Django AllAuth used to provide enhanced user account functionality
++ Django templating language used to insert data from the database into the sites pages
 + Bootstrap: Framework used to add structure and responsiveness
 + Favicon Generator: Used to create favicon used on the website
 + GitHub: GitHub respository is used to store the project's code after being pushed from Gitpod
@@ -318,28 +342,31 @@ I would like to...
 + Grammarly: Used to correct any spelling mistakes on readme and app text
 + AmIResponsive: Used to generate mockup image
 
-## Social Media Marketing
-
-  * For the purposes of the assessment a mock Facebook page was created to represent the company on a social media platform. 
-   - The Facebook page includes links to the Motor-werks website to drive traffic from the social network to the site. 
-   <details>
-  <summary>Social media buisness page</summary>
-  <br>
-
-  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(2).png)
-  <br>
-  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(3).png)
-  <br>
-  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(4).png)
-  <br>
-  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(1).png)
-  <br>
-  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(5).png)
-  <br>
-  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(6).png)
-  </details>
-  <br>
-
+* Python modules installed:
+   - asgiref==3.5.2
+   - boto3==1.24.46
+   - botocore==1.27.46
+   - dj-database-url==1.0.0
+   - Django==3.2.13
+   - django-allauth==0.51.0
+   - django-crispy-forms==1.14.0
+   - django-lint==2.0.4
+   - django-storages==1.13.1
+   - gunicorn==20.1.0
+   - jmespath==1.0.1
+   - logilab-astng==0.24.3
+   - logilab-common==1.9.7
+   - oauthlib==3.2.0
+   - psycopg2==2.9.3
+   - psycopg2-binary==2.9.3
+   - PyJWT==2.4.0
+   - pylint==0.28.0
+   - python3-openid==3.2.0
+   - pytz==2022.1
+   - requests-oauthlib==1.3.1
+   - s3transfer==0.6.0
+   - sqlparse==0.4.2
+   - stripe==2.63.0
 
 ## Testing and Code validation
 <!-- TO DO -->
@@ -392,6 +419,7 @@ Motor-werks is deployed using Heroku
       - Add relevent secret keys and environment variables
 
 </details>
+<br>
 
 <details>
 <summary>Forking the GitHub Repository </summary>
@@ -416,8 +444,11 @@ Motor-werks is deployed using Heroku
 Press Enter. Your local clone will be created
 
 </details>
+<br>
 
 
+
+#
 ## Credits and references
 
 ### Images
