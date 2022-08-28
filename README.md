@@ -18,7 +18,25 @@ Take the stress out of vehicle servicing and repairs with our simple revolutiona
 
 ### User Stories
 
-<!-- TO DO -->
+1. As a user, I would like to be able to:
+
+    1.1 Register on the website using my username, email address and password `(MUST HAVE)`
+
+    1.2 View all services available on the site `(SHOULD HAVE)`
+
+    1.3 View details about all services `(SHOULD HAVE)`
+
+    1.4 Receive a confirmation email after registering `(MUST HAVE)`
+
+2. As a logged in user, I would like to be able to:
+
+    2.1 Have a personalised profile that displays my vehicle information `(SHOULD HAVE)`
+
+    2.2 Choose a new service `(SHOULD HAVE)`
+
+    2.3 Easily pay for my chosen service `(MUST HAVE)`
+
+    2.4 Edit or delete my personal profile `(SHOULD HAVE)`
 #
 ### 1. Strategy
 
@@ -36,7 +54,6 @@ Take the stress out of vehicle servicing and repairs with our simple revolutiona
 ## Functional Scope
 
 **Motor-werks Flowchart**
-<!-- TO DO -->
 
 <details>
 <summary>Flowchart</summary>
@@ -72,7 +89,7 @@ All functionality and development of this project were managed using **Trello** 
 
 
 ### 4. Skeleton
-<!-- TO DO -->
+
 * Wireframes created with Balsamiq. <br>
 * The project was developed from initial wireframes, and some modifications were made during the development process in response to user feedback
 
