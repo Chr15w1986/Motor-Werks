@@ -9,14 +9,17 @@ from services.models import Services
 
 
 class PaymentsView(TemplateView):
+    """ Renders the payments page """
     template_name = 'payments/payments.html'
 
 
 class SuccessView(TemplateView):
+    """ Renders the payments success page """
     template_name = 'payments/success.html'
 
 
 class CancelledView(TemplateView):
+    """ Renders the payments cancelled/failed page """
     template_name = 'payments/cancelled.html'
 
 
@@ -41,7 +44,7 @@ def create_checkout_session(request):
         service = Services.objects.get(pk=request.GET['pk'])
         try:
             checkout_session = stripe.checkout.Session.create(
-                success_url=domain_url + 'payments/success?session_id={CHECKOUT_SESSION_ID}',
+                success_url=domain_url + 'payments/success?session_id={CHECKOUT_SESSION_ID}',  # noqa
                 cancel_url=domain_url + 'payments/cancelled/',
                 payment_method_types=['card'],
                 mode='payment',
@@ -58,6 +61,7 @@ def create_checkout_session(request):
             return JsonResponse({'error': str(e)})
 
 
+# Stripe webhook handler
 @csrf_exempt
 def stripe_webhook(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY
