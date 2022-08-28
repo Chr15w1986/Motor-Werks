@@ -1,3 +1,4 @@
+""" App configuration file """
 from django.apps import AppConfig
 
 

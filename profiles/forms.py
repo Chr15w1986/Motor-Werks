@@ -1,3 +1,4 @@
+""" Forms file for profiles app """
 from django import forms
 from .models import UserProfile
 from crispy_forms.helper import FormHelper

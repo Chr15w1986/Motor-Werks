@@ -12,7 +12,7 @@ class UserProfile(models.Model):
     first_name = models.CharField(max_length=25, blank=False, default=None)
     last_name = models.CharField(max_length=25, blank=False, default=None)
     email = models.CharField(max_length=40, blank=False, default=None)
-    street_address1 = models.CharField(max_length=60, blank=False, default=None)
+    street_address1 = models.CharField(max_length=60, blank=False, default=None)  # noqa
     street_address2 = models.CharField(max_length=60, blank=True, default=None)
     town_or_city = models.CharField(max_length=40, blank=False, default=None)
     county = models.CharField(max_length=40, blank=False, default=None)

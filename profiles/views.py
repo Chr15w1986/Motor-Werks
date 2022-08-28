@@ -17,6 +17,7 @@ user = get_user_model()
 
 
 class ProfileView(View):
+    """ Renders the profile in a form """
     model = UserProfile
     form = UserForm
     template_name = 'profiles/profile.html'
@@ -57,6 +58,7 @@ class UpdateProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class ServiceHistory(View):
+    """ Renders user order history within the profile page """
     model = ServiceHistory
     fields = ('order_date',
               'service_type')
@@ -65,7 +67,7 @@ class ServiceHistory(View):
     def get(self, request, *args, **kwargs):
         user = UserProfile.objects.get(username=request.user.username)
         history = ServiceHistory.objects.filter(user=user)
-        return render(request, self.template_name, {'user': user, 'history': history})
+        return render(request, self.template_name, {'user': user, 'history': history})  # noqa
 
 
 class DeleteProfile(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
