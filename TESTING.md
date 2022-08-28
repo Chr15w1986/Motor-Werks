@@ -121,7 +121,29 @@ All files for Payments app passed through PEP8 without errors
 
 All files for Profiles app passed through PEP8 without errors
 
+### **Services App**
 
+<p float="left">
+        <img src="static/assets/images/TESTING-images/PEP8-images/services-admin-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/services-apps-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/services-models-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/services-urls-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/services-views-pep8.png" width="300" height="300"/>
+</p>
+
+All files for Services app passed through PEP8 without errors
+
+### **Misc**
+
+* Django created manage.py<br>
+* Custom created custom_storages.py<br>
+
+<p float="left">
+        <img src="static/assets/images/TESTING-images/PEP8-images/customstorages-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/managepy-pep8.png" width="300" height="300"/>
+        
+</p>
+All remaining root directory files passed through PEP8 without errors
 
 ## **Manual Testing**
 
