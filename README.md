@@ -318,6 +318,29 @@ I would like to...
 + Grammarly: Used to correct any spelling mistakes on readme and app text
 + AmIResponsive: Used to generate mockup image
 
+## Social Media Marketing
+
+  * For the purposes of the assessment a mock Facebook page was created to represent the company on a social media platform. 
+   - The Facebook page includes links to the Motor-werks website to drive traffic from the social network to the site. 
+   <details>
+  <summary>Social media buisness page</summary>
+  <br>
+
+  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(2).png)
+  <br>
+  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(3).png)
+  <br>
+  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(4).png)
+  <br>
+  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(1).png)
+  <br>
+  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(5).png)
+  <br>
+  ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(6).png)
+  </details>
+  <br>
+
+
 ## Testing and Code validation
 <!-- TO DO -->
 All testing and code validation details are described in a separate file [TESTING.md](TESTING.md)
