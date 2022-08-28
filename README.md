@@ -146,8 +146,27 @@ The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, but
 #
 ## Existing Features
 
+### **Custom 500 Internal server error**
 
-<!-- To do -->
+* I have created a custom 500 error page to redirect to if there are any issues with the database including a button to redirect back to home
+
+<img width="700" src="static/assets/images/README-images/500-error.png">
+
+### **Custom 404 Page not found**
+
+* I have created a custom 404 error page to catch if the user inputs the wrong page number, or if a page or feature does not exist
+* I have included a button to redirect back to home
+
+<img width="700" src="static/assets/images/README-images/404-error.png">
+
+
+### **Custom 403 Forbidden page**
+
+* I have created a custom 403 forbidden error page to redirect to if there are any instances where a user tries to access a secure area of the site (e.g admin), including a button to redirect back to home
+
+### **Custom 405 Method not allowed page**
+
+* I have also created a custom 405 method not allowed error page to redirect to if there are any instances where the server knows the request method, but the target resource doesn't support the method, including a button to redirect back to home
 #
 ## Future Features
 
