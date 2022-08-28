@@ -446,7 +446,40 @@ Press Enter. Your local clone will be created
 </details>
 <br>
 
+<details>
+<summary>AWS S3 (Amazon web services storage)</summary>
 
+  1. Navigate in a browser to Amazon AWS, log in, or create an account
+  2. Create a new S3 bucket for the site and create a static directory and media directory within the bucket
+  3. From the dashboard - copy the bucket details into the settings.py file:<br>
+    - you will require the following:<br>
+    - Storage Bucket Name<br>
+    - Storage Bucket Region Name<br>
+    - Access Key ID<br>
+    - Secret Access Key<br>
+  4. Add these settings to the env.py file to link AWS:<br>
+    - os.environ["AWS_ACCESS_KEY_ID"] = `'your access key'`<br>
+    - os.environ["AWS_SECRET_ACCESS_KEY"] = `'your secret access key'`<br>
+  5. Back in Heroku, add the keys and values from AWS and env.py to the config vars
+</details>
+<br>
+
+<details>
+<summary>Stripe payments Setup</summary>
+
+ * This project uses Stripe as a payment provider - 
+  1. Create a stripe account at stripe.com 
+  2. Make sure you click `developer` account to gain access to the api keys required to run the payment processes
+  3. Once you have successfully created your stripe account:<br>
+      - Copy the stripe public key, stripe secret key and stripe webhook key into your env.py file and into heroku config vars<br>
+      - Configure the settings file to find the variables required by stripe<br>
+      - `STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')`<br>
+      - `STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')`<br>
+      - `STRIPE_ENDPOINT_SECRET = os.environ.get('STRIPE_ENDPOINT_SECRET')`<br>
+      - `DOMAIN_URL = os.environ.get('DOMAIN_URL')`<br>
+
+</details>
+<br>
 
 #
 ## Credits and references
