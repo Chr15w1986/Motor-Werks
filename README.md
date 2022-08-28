@@ -156,7 +156,7 @@ The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, but
 - A button to login if user is logged out or has yet to sign up along with a button to view services
 - A button to view services if the user is logged in
 <br>
-<br>
+
 <img width="500" src="static/assets/images/README-images/loggedouthomepage.png">
 <br>
 <img width="500" src="static/assets/images/README-images/loggedinhomepage.png">
@@ -188,7 +188,7 @@ the user logs in, or signs up
   - If the user is not logged in, a login button will be available
   - If the user is logged in, a GO BACK button will be available
 <br>
-<br>
+
 <img width="400" src="static/assets/images/README-images/loggedoutservice.png">
 <br>
 <img width="400" src="static/assets/images/README-images/loggedinservice.png">
@@ -200,19 +200,56 @@ the user logs in, or signs up
   - `Suspension repairs`
   - `Tyre repair or replacement`
 <br>
-<br>
+
   
 * Upon the user pressing a button, they will be taken to the `service-detail` page for the chosen service,
   - Once again, if the user is logged in, a button `Buy Now` will appear within the detail card
   - If the user is not logged in, the card is read-only with a request 'Please login in to purchase this service' and a login button
 <br>
-<br>
+
 
   <img width="600" src="static/assets/images/README-images/loggedinsingleservice.png">
   <img width="600" src="static/assets/images/README-images/loggedoutsingleservice.png">
 <br>
 
-#
+### **Profile page (with CRUD)** 
+
+* Here the user is able to read, update and delete their own profile, including:
+  * `first name`
+  * `last name`
+  * `email`
+  * `vehicle reg`
+  * `street address1`
+  * `street address2`
+  * `town or city`
+  * `county`
+  * `postcode`
+  * `phone number`
+<br>
+
+  1.1. With validation, only the logged in user can view this page
+  <br>
+<img width="250" src="static/assets/images/README-images/profilepage.png">
+<br>
+   i. For Edit profile, a custom modal pops up which contains a fully editable form,<br> where the user can change details   
+   <br>
+    <img width="280" src="static/assets/images/README-images/editprofile.png">
+    <br>
+    <img width="280" src="static/assets/images/README-images/editprofile2.png">
+    <br>
+  
+  1.2. Delete profile, will take the user to a confirmation page
+   <br>
+    <img width="400" src="static/assets/images/README-images/deleteconfirm.png">
+    <br>
+  1.3. At the confirmation page, the cancel button will return the user to `Home` with no effect to the database
+   <br>
+  1.4. But if the user wishes to delete their profile, all data is removed after confirmation and the user is sent back to a `delete-success` page where the user has 3 choices, `Login`, `Signup` or `Services we offer`
+    <br>
+    <img width="400" src="static/assets/images/README-images/deletesuccess.png">
+    <br>
+  1.4.1. If the user attempts to log back in with the recently deleted information, `The e-mail address and/or password you specified are not correct` message will appear. The user must signup again.
+
 ### **Custom 500 Internal server error**
 
 * I have created a custom 500 error page to redirect to if there are any issues with the database including a button to redirect back to home
@@ -225,7 +262,6 @@ the user logs in, or signs up
 * I have included a button to redirect back to home
 
 <img width="500" src="static/assets/images/README-images/404-error.png">
-
 
 ### **Custom 403 Forbidden page**
 
