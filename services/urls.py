@@ -1,3 +1,4 @@
+""" Url config file for services app """
 from django.urls import path
 from .views import SingleServiceDetail, AllServicesView
 

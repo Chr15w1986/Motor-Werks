@@ -1,3 +1,4 @@
+""" Views file for services app """
 from django.views.generic import DetailView, ListView
 from .models import Services
 
