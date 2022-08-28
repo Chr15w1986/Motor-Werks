@@ -1,10 +1,14 @@
 <h1 align=center>Welcome to Mötör-Werks<br>Portfolio Project 5</h1>
 
-<p align=center><img src="static/assets/images/mw-logo.png"><br>
+<h2 align=center><img src="static/assets/images/mw-logo.png"><br>
 Mötör-Werks is a mobile vehicle repairs and servicing e commerce website.<br>
-Take the stress out of vehicle servicing and repairs with our simple revolutionary 5 tier system.</p>
+Take the stress out of vehicle servicing and repairs with our simple revolutionary 5 tier system.<br></h2>
+
+<h3 align=center>--This is the last of five projects that I will undertake with CodeInstitute's Full stack programme--</h3>
 <br>
-<h1 align=center></h1>
+
+#
+#
 
 ## FINAL DESIGN
 <br>
@@ -369,7 +373,7 @@ I would like to...
    - stripe==2.63.0
 
 ## Testing and Code validation
-<!-- TO DO -->
+
 All testing and code validation details are described in a separate file [TESTING.md](TESTING.md)
 
 ## Deployment
