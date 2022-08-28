@@ -108,6 +108,19 @@ All files for home app passed through PEP8 without errors
 
 All files for Payments app passed through PEP8 without errors
 
+### **Profiles App**
+
+<p float="left">
+        <img src="static/assets/images/TESTING-images/PEP8-images/profiles-admin-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/profiles-apps-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/profiles-forms-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/profiles-models-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/profiles-urls-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/profiles-views-pep8.png" width="300" height="300"/>
+</p>
+
+All files for Profiles app passed through PEP8 without errors
+
 
 
 ## **Manual Testing**
