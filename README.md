@@ -73,7 +73,6 @@ Take the stress out of vehicle servicing and repairs with our simple revolutiona
 </details>
 <br>
 
-
 **Agile Methodology**
 
 All functionality and development of this project were managed using **Trello** (https://trello.com/b/Ha79yDqn/motor-werks-pp5)
@@ -87,12 +86,10 @@ All functionality and development of this project were managed using **Trello** 
 * A Small dropdown menu navigation is the same on all pages at small screen sizes to ensure easy navigation
 * Create account, Edit/Update profiles are straight forward forms to allow users to use the features without issues
 
-
 ### 4. Skeleton
 
 * Wireframes created with Balsamiq. <br>
 * The project was developed from initial wireframes, and some modifications were made during the development process in response to user feedback
-
 
 <details>
 <summary>Click to see wireframes:</summary>
@@ -111,7 +108,6 @@ All functionality and development of this project were managed using **Trello** 
 
 </details>
 <br>
-
 
 ### 5. Surface
 
@@ -206,11 +202,37 @@ the user logs in, or signs up
   - Once again, if the user is logged in, a button `Buy Now` will appear within the detail card
   - If the user is not logged in, the card is read-only with a request 'Please login in to purchase this service' and a login button
 <br>
-
-
   <img width="600" src="static/assets/images/README-images/loggedinsingleservice.png">
   <img width="600" src="static/assets/images/README-images/loggedoutsingleservice.png">
 <br>
+
+### **Payments (STRIPE)**
+
+* After the `logged in` user has the clicked `Buy Now!` button on the service detail page,
+<br>
+  the user is taken to a `Please confirm if you wish to continue with your purchase` page.
+
+  * The user is then taken directly to the [Stripe.com](https://stripe.com/gb) payment window.
+   - Due to the nature of this project, only test payments are available.
+   - Payment information is:
+      - `4242 4242 4242 4242` (card number)
+      - `04/24` (MM/YY)
+      - `424 or 242` (CVC)
+      - `Any name`
+      - `Any postcode`
+  <br>
+    <img width="600" src="static/assets/images/README-images/stripepaymentwindow.png">
+  <br>
+  * After entering the information above and clicking `Pay`,<br>
+    the user is returned back to the site, to a payment confirmation page
+  <br>
+    <img width="600" src="static/assets/images/README-images/paymentconfirmation.png">
+  <br>
+  * If, however, the payment failed, or the payment cancelled,<br>
+    the user is returned back to the site, to a payment cancelled page
+  <br>
+    <img width="600" src="static/assets/images/README-images/paymentfailed.png">
+  <br>
 
 ### **Profile page (with CRUD)** 
 
@@ -277,7 +299,7 @@ I would like to...
 
 1. Add an option for the user to purchase more than one service e.g with a basket or checkout system
 2. Add an online chat service to hone in on the specifics the customer needs e.g If the user purchased tyres, they could talk to me about brands or sizes
-3. Include a comments or ratings section that all users can see that could be linked to the service they bought
+3. Include a comments or ratings section that all users can view, that could be linked to the service they purchased
 
 #
 ## Languages Used
@@ -399,5 +421,3 @@ Thanks Matt!
 
 <!-- ISSUES -->
 white on white text apple iphone 11pro, XR and 13, fixed by setting text input colour to #000 black
-
-future implementation, allow users to purchase more than 1 item at a time
