@@ -145,19 +145,86 @@ The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, but
 
 #
 ## Existing Features
+### **Home page**
 
+1. Home page consists of: 
+ - A welcome message (alternative message if user is logged in, see images below)
+ - The purpose of the site
+ - Two images, 
+    * One motor-werks logo
+    * One image of an audi R8 in the dark with lights on (Removed on smaller screen sizes)
+- A button to login if user is logged out or has yet to sign up along with a button to view services
+- A button to view services if the user is logged in
+<br>
+<br>
+<img width="500" src="static/assets/images/README-images/loggedouthomepage.png">
+<br>
+<img width="500" src="static/assets/images/README-images/loggedinhomepage.png">
+
+### **Navbar**
+
++ Fixed Navbar to allow the user easy access to all pages
+
+1. Home, Services, Signup and Login buttons on the navbar are the only buttons present if the user is `not` logged in
+
+  <img width="500" src="static/assets/images/README-images/loggedoutuser.png">
+
+2. Home, Services, {username}'s profile and Logout buttons are only present if the user has successfully logged in
+
+  <img width="500" src="static/assets/images/README-images/loggedinuser.png">
+
+3. Services is available to view for all users (logged in or not), however, the services page is read-only until<br>
+the user logs in, or signs up
+
+4. Collapsed navbar on smaller devices to wrap in all options and assure better navbar design.
+  - Rounded bottom left edge is part of the site-wide design 
+
+  <img width="400" src="static/assets/images/README-images/collapsed-navbar.png">
+
+
+### **Services page**
+
+1. On this page, users can view all available services
+  - If the user is not logged in, a login button will be available
+  - If the user is logged in, a GO BACK button will be available
+<br>
+<br>
+<img width="400" src="static/assets/images/README-images/loggedoutservice.png">
+<br>
+<img width="400" src="static/assets/images/README-images/loggedinservice.png">
+
+* Each button will take the user to the relevant service they wish to view which are,
+  - `Brake service`
+  - `Major Service`
+  - `Minor Service`
+  - `Suspension repairs`
+  - `Tyre repair or replacement`
+<br>
+<br>
+  
+* Upon the user pressing a button, they will be taken to the `service-detail` page for the chosen service,
+  - Once again, if the user is logged in, a button `Buy Now` will appear within the detail card
+  - If the user is not logged in, the card is read-only with a request 'Please login in to purchase this service' and a login button
+<br>
+<br>
+
+  <img width="600" src="static/assets/images/README-images/loggedinsingleservice.png">
+  <img width="600" src="static/assets/images/README-images/loggedoutsingleservice.png">
+<br>
+
+#
 ### **Custom 500 Internal server error**
 
 * I have created a custom 500 error page to redirect to if there are any issues with the database including a button to redirect back to home
 
-<img width="700" src="static/assets/images/README-images/500-error.png">
+<img width="500" src="static/assets/images/README-images/500-error.png">
 
 ### **Custom 404 Page not found**
 
 * I have created a custom 404 error page to catch if the user inputs the wrong page number, or if a page or feature does not exist
 * I have included a button to redirect back to home
 
-<img width="700" src="static/assets/images/README-images/404-error.png">
+<img width="500" src="static/assets/images/README-images/404-error.png">
 
 
 ### **Custom 403 Forbidden page**
