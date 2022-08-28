@@ -144,7 +144,40 @@ All files for Services app passed through PEP8 without errors
         
 </p>
 All remaining root directory files passed through PEP8 without errors
+</details>
+<br>
 
 ## **Manual Testing**
 
-<!-- TO DO -->
+### Manual Testing of User Input and Functions  
+  I systematically tested all user inputs and functionality in the website to compare feedback/results against expected results.  
+  Any unexpected output/outcomes were fixed.  
+  The results of the testing prcedures can be found [here](https://docs.google.com/spreadsheets/d/1MXG4cFjO-vgku2RB4azp_uSs3hObE3Ms83dnKNmJe8w/edit#gid=0)
+
+### Desktop
+  
+  Google Chrome: All aspects of the site work perfectly fine. Pages load quickly, all features are working and found no problems with CRUD, logging in or out, signing up, paying for each service etc.<br>
+  Mozilla Firefox: All aspects of the site work perfectly fine. Pages load quickly, all features are working and found no problems with CRUD, logging in or out, signing up, paying for each service etc.<br>
+
+  * Every button and link works and redirects to the next page quickly<br>
+  * URL's load correctly on the Services page<br>
+  * Sign up form sends an automated email from my personal gmail account to the user to verify the email address. This works as it should
+  
+
+### Mobile
+
+  Tested all aspects of the site via three devices, Apple Iphone 11, Samsung S20FE and Samsung S7 tablet. The site reacts well to different devices, responsiveness works well, including on apples browser Safari.
+
+
+**Unfixed bugs**
+
+* Three errors remain in Chrome dev tools Console on the live version of the site. <br>
+    - Two of these errors relate to AWS CORS policy and sitewebmanifest within S3.<br>
+    - The last error is to do with bootstrap.scrollspy, this is necessary for the site but throws an error.<br>
+    - Although I have tried to research these issues, I have not found a cure, thus these errors remain.<br>
+    - The functionality of the site is not affected by these errors.<br>
+
+**Fixed bugs**
+
+* While testing on safari, a bug was found with dark mode switched on, relating to the form input not showing any text at all.
+    - This was a simple fix by setting text-input colour to #000 (black).
