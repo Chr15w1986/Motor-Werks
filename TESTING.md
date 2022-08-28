@@ -78,6 +78,36 @@
   <details>
   <summary>PEP8 Validator results</summary>
 
+###  **Motor-werks App**
+
+<p float="left">
+        <img src="static/assets/images/TESTING-images/PEP8-images/motorwerks-asgi-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/motorwerks-settings-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/motorwerks-wsgi-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/motorwerks-views-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/motorwerks-urls-pep8.png" width="300" height="300"/>
+</p>
+
+All files for Motor-werks passed through PEP8 without errors
+
+###  **Home App**
+
+<p float="left">
+        <img src="static/assets/images/TESTING-images/PEP8-images/home-views.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/home-urls.png" width="300" height="300"/>
+</p>
+
+All files for home app passed through PEP8 without errors
+
+### **Payments App**
+
+<p float="left">
+        <img src="static/assets/images/TESTING-images/PEP8-images/payments-urls-pep8.png" width="300" height="300"/>
+        <img src="static/assets/images/TESTING-images/PEP8-images/payments-views-pep8.png" width="300" height="300"/>
+</p>
+
+All files for Payments app passed through PEP8 without errors
+
 
 
 ## **Manual Testing**
