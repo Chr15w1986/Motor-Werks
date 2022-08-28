@@ -509,6 +509,3 @@ Thanks Matt!
 - My family for their support, patience and testing
 - My wonderful Wife for being my personal spell checker/grammar police and for listening to me when I needed to blow off steam!
 - Everybody on Slack for tips, advice, quick fixes and support
-
-<!-- ISSUES -->
-white on white text apple iphone 11pro, XR and 13, fixed by setting text input colour to #000 black
