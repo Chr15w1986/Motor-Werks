@@ -529,7 +529,7 @@ Press Enter. Your local clone will be created
 ### Code
 
 * Mailchimp and form code was used for the signup newsletter in the footer of the site [mailchimp.com](https://mailchimp.com/)
-* Stripe javascript and settings were used for payments within the site [Stripe.com](https://stripe.com/) <br>and from [Testdriven.io](https://Testdriven.io/)
+* A walkthough was used for the Stripe Python, javascript and settings for payments within the site [Stripe.com](https://stripe.com/) <br>and from [Testdriven.io](https://Testdriven.io/)
 
 
 ## Acknowledgements
