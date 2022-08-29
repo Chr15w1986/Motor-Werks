@@ -171,15 +171,16 @@ All remaining root directory files passed through PEP8 without errors
 
 **Unfixed bugs**
 
-* Three errors remain in Chrome dev tools Console on the live version of the site. <br>
+* Two errors remain in Chrome dev tools Console on the live version of the site. <br>
     - Two of these errors relate to AWS CORS policy and sitewebmanifest within S3.<br>
-    - The last error is to do with bootstrap.scrollspy, this is necessary for the site but throws an error.<br>
     - Although I have tried to research these issues, I have not found a cure, thus these errors remain.<br>
     - The functionality of the site is not affected by these errors.<br>
 
 **Fixed bugs**
 
 * While testing on safari, a bug was found with dark mode switched on, relating to the form input not showing any text at all.
-    - This was a simple fix by setting text-input colour to #000 (black).
+    - This was a simple fix by setting text-input colour to #000 (black).<br>
+    - There was an error to do with bootstrap.scrollspy, this was found in the scripts.js file from bootstrap this is necessary for the site but threw an error anyway. The fix for this was removing the if statement within the mainNav scroll spy code. The site functions as normal.<br>
+    - Another error I kept getting in the console was for mailchimp, not being able to load the `mc-validate.js` file correctly. I moved the script to the bottom of the base.html file and that cured the problem.
 
 To navigate back to the main README click [here](README.md)
