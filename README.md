@@ -36,11 +36,16 @@ Take the stress out of vehicle servicing and repairs with our simple revolutiona
 
     2.1 Have a personalised profile that displays my vehicle information `(SHOULD HAVE)`
 
-    2.2 Choose a new service `(SHOULD HAVE)`
+    2.2 I want to be able to choose a new service `(SHOULD HAVE)`
 
     2.3 Easily pay for my chosen service `(MUST HAVE)`
 
-    2.4 Edit or delete my personal profile `(SHOULD HAVE)`
+    2.4 I want to be able to edit my personal information `(MUST HAVE)`
+
+    2.5 I want to be able to delete my personal information and leave the site `(MUST HAVE)`
+
+    2.6 I want to be able to view my service history (purchase history) `(SHOULD HAVE)`
+
 #
 ### 1. Strategy
 
@@ -165,9 +170,9 @@ The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, but
   </details>
   <br>
 
-* Motor-werks is a business to consumer (B2C) ecommerce site for users (consumers) to find and purchase selected products
+* Motor-werks is a business to consumer (B2C) ecommerce site for users (consumers) to find and purchase motor vehicle related services.
   - A user is able to purchase a chosen service (eg. Major service)
-  - With the user stored information (Name, address, vehicle registration), we as a company will <br>
+  - With the user stored information (eg. Name, address, vehicle registration), we as a company will <br>
     order the relevant parts in advance based on the users needs and requirements, <br>
     travel to the customer site and carry out the service they purchased
   - For repeat or returning users/consumers, they are able to log in to their account, <br>
