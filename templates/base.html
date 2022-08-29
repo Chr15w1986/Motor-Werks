@@ -44,8 +44,7 @@
     <script src="{% static 'js/scripts.js' %}"></script>
     <!-- Stripe payment scripts -->
     <script src="https://js.stripe.com/v3/"></script>
-    <!-- Mailchimp scripts -->
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+    <!-- Mailchimp JS -->
     <script type='text/javascript'>
         (function ($) {
             window.fnames = new Array();
@@ -86,8 +85,8 @@
 
                     <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="{% url 'profiles' %}">{{ user.username }}'s Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'profiles' %}">{{ user.username }}'s
+                            Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
 
                     {% else %}
@@ -118,12 +117,12 @@
     <!-- Social links-->
     <section class="contact-section">
         <div class="social d-flex justify-content-center">
-            <a class="mt-2 mx-2" href="https://twitter.com/?lang=en" rel="noopener noreferrer nofollow" target="_blank"><i
-                    class="fab fa-twitter"></i></a>
-            <a class="mt-2 mx-2" href="https://en-gb.facebook.com/" rel="noopener noreferrer nofollow" target="_blank"><i
-                    class="fab fa-facebook-f"></i></a>
-            <a class="mt-2 mx-2" href="https://github.com/Chr15w1986/Motor-Werks" rel="noopener noreferrer nofollow" target="_blank"><i
-                    class="fab fa-github"></i></a>
+            <a class="mt-2 mx-2" href="https://twitter.com/?lang=en" rel="noopener noreferrer nofollow"
+                target="_blank"><i class="fab fa-twitter"></i></a>
+            <a class="mt-2 mx-2" href="https://en-gb.facebook.com/" rel="noopener noreferrer nofollow"
+                target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a class="mt-2 mx-2" href="https://github.com/Chr15w1986/Motor-Werks" rel="noopener noreferrer nofollow"
+                target="_blank"><i class="fab fa-github"></i></a>
         </div>
 
         <footer class="container-wrapper">
@@ -139,7 +138,8 @@
                         <div class="col-12 col-md-6">
                             <h2>Socials</h2>
                             <p class="mb-0">Keep up to date with all our latest offers</p>
-                            <a rel="noopener noreferrer nofollow" href="https://www.facebook.com/M%C3%B6t%C3%B6r-Werks-107405375426676" target="_blank"><i
+                            <a rel="noopener noreferrer nofollow"
+                                href="https://www.facebook.com/M%C3%B6t%C3%B6r-Werks-107405375426676" target="_blank"><i
                                     class="fab fa-facebook-square"></i> Follow Motor-Werks on
                                 Facebook!</a>
                         </div>
@@ -181,10 +181,15 @@
                                     </div>
                                 </form>
                             </div>
+                            <!-- Mailchimp scripts -->
+                            <script type='text/javascript'
+                                src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+
                             <!--End mc_embed_signup-->
                         </div>
                         <div>
-                            <a href="https://www.privacypolicygenerator.info/live.php?token=jvszoA9IInmv4CHKAeSVrx3ijbnjnlt5" rel="noopener noreferrer nofollow" target="_blank">Motor-Werks Privacy Policy</a>
+                            <a href="https://www.privacypolicygenerator.info/live.php?token=jvszoA9IInmv4CHKAeSVrx3ijbnjnlt5"
+                                rel="noopener noreferrer nofollow" target="_blank">Motor-Werks Privacy Policy</a>
                         </div>
                     </div>
                 </section>
