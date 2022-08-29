@@ -143,7 +143,7 @@ The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, but
 </details>
 <br>
 
-## Social Media Marketing
+## Ecommerce Buisness Model
 
   * For the purposes of the assessment a mock Facebook page was created to represent the company on a social media platform. 
    - The Facebook page includes links to the Motor-werks website to drive traffic from the social network to the site. 
@@ -164,6 +164,17 @@ The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, but
   ![Motor-werks Facebook page](static/assets/images/README-images/Facebook(6).png)
   </details>
   <br>
+
+* Motor-werks is a business to consumer (B2C) ecommerce site for users (consumers) to find and purchase selected products
+  - A user is able to purchase a chosen service (eg. Major service)
+  - With the user stored information (Name, address, vehicle registration), we as a company will <br>
+    order the relevant parts in advance based on the users needs and requirements, <br>
+    travel to the customer site and carry out the service they purchased
+  - For repeat or returning users/consumers, they are able to log in to their account, <br>
+    check when the last service was carried out <br>
+    and purchase a repeat service or a different service at their leisure<br>
+  - Users are able to signup to our newsletter for special offers and discounts<br>
+  - Social media has been utilised to drive traffic to the website to aid in further purchases
 
 #
 ## Existing Features
@@ -497,6 +508,12 @@ Press Enter. Your local clone will be created
 * Motor-werks logo, [squarespace.com](https://static1.squarespace.com/static/5d3f253d3bb01d0001087e06/t/5d3f2734701cda00012936e4/1644943519357/)
 * Tool to remove the Motor-werks background to create transparent logo, [remove.bg](https://www.remove.bg/)
 * Background image of scratched/worn (border/surround), [pngwing.com](https://www.pngwing.com/en/free-png-bzkyg)
+
+
+### Code
+
+* Mailchimp and form code was used for the signup newsletter in the footer of the site [mailchimp.com](https://mailchimp.com/)
+* Stripe javascript and settings were used for payments within the site [Stripe.com](https://stripe.com/)
 
 
 ## Acknowledgements
