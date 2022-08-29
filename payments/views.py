@@ -5,6 +5,7 @@ from django.conf import settings
 from django.http.response import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import TemplateView
+from django.contrib.auth.mixins import UserPassesTestMixin
 from services.models import Services
 
 
@@ -13,9 +14,15 @@ class PaymentsView(TemplateView):
     template_name = 'payments/payments.html'
 
 
-class SuccessView(TemplateView):
+class SuccessView(UserPassesTestMixin, TemplateView):
     """ Renders the payments success page """
     template_name = 'payments/success.html'
+
+    def test_func(self):
+        stripe.api_key = {'STRIPE_SECRET_KEY'}
+        session_id = self.request.get.session_id
+        session = stripe.checkout.Session.retrieve(session_id)
+        print(session)
 
 
 class CancelledView(TemplateView):
@@ -74,10 +81,10 @@ def stripe_webhook(request):
         event = stripe.Webhook.construct_event(
             payload, sig_header, endpoint_secret
         )
-    except ValueError as e:
+    except ValueError as e:  # noqa
         # Invalid payload
         return HttpResponse(status=400)
-    except stripe.error.SignatureVerificationError as e:
+    except stripe.error.SignatureVerificationError as e:  # noqa
         # Invalid signature
         return HttpResponse(status=400)
 
