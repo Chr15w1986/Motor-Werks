@@ -502,8 +502,8 @@ Press Enter. Your local clone will be created
 ## Acknowledgements
 
 - Code institute for the amazing Tutors on the course, Scott, Ger and Sean!
-- My brilliant Mentor Ben Kavanagh, [BAK2K3](https://github.com/BAK2K3) for his patience, excellent advice on my code, pushing me back on track
-    when I threatened to 'throw in the towel', taking time out of his own day and duties to answer ALL of my questions with absolute perfection, and just generally being a Python God! I cannot thank you enough!
+- My excellent Mentor Ben Kavanagh, [BAK2K3](https://github.com/BAK2K3) for his patience, excellent advice on my code, pushing me back on track
+    when I threatened to 'throw in the towel', taking time out of his own day and duties to answer ALL of my questions with absolute perfection, and just generally being a Python genius! I cannot thank you enough! "One last push!!"
 - Matt Bodden [MattBCoding](https://github.com/MattBCoding), Yet again for being an absolute genius at pointing out the obvious.
 Thanks Matt!
 - My family for their support, patience and testing

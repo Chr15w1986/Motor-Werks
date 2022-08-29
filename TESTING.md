@@ -19,7 +19,7 @@
  
   
   The low best practices score on `Home` with 83, is due to the main image aspect ratio<br>
-  The low best SEO score on `Signup` with 89, is due to the link text no being descriptive, but it simply says `here`
+  The low best SEO score on `Signup` with 89, is due to the link text not being descriptive enough, it simply says `here` within the pargraph. I do not consider this an issue for the user
   
 
 </details>
@@ -181,3 +181,5 @@ All remaining root directory files passed through PEP8 without errors
 
 * While testing on safari, a bug was found with dark mode switched on, relating to the form input not showing any text at all.
     - This was a simple fix by setting text-input colour to #000 (black).
+
+To navigate back to the main README click [here](README.md)
