@@ -6,7 +6,8 @@ from django.http.response import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import TemplateView
 from django.contrib.auth.mixins import UserPassesTestMixin
-from services.models import Services
+from services.models import Services, ServiceHistory
+from profiles.models import UserProfile
 
 
 class PaymentsView(TemplateView):
@@ -19,10 +20,22 @@ class SuccessView(UserPassesTestMixin, TemplateView):
     template_name = 'payments/success.html'
 
     def test_func(self):
-        stripe.api_key = {'STRIPE_SECRET_KEY'}
-        session_id = self.request.get.session_id
-        session = stripe.checkout.Session.retrieve(session_id)
-        print(session)
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        try: 
+            session_id = self.request.GET['session_id']
+            session = stripe.checkout.Session.retrieve(session_id)
+            if session['payment_status'] == 'paid':
+                print(session)
+                service_name = session['metadata']['service']
+                print(service_name)
+                service = Services.objects.get(service_name=service_name)
+                profile = UserProfile.objects.get(user=self.request.user)
+                ServiceHistory.object.create(booked_by=profile, service_type=service)
+                return True
+            else:
+                return False
+        except: 
+            return False
 
 
 class CancelledView(TemplateView):
