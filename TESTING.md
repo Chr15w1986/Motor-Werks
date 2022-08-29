@@ -152,12 +152,12 @@ All remaining root directory files passed through PEP8 without errors
 ### Manual Testing of User Input and Functions  
   I systematically tested all user inputs and functionality in the website to compare feedback/results against expected results.  
   Any unexpected output/outcomes were fixed.  
-  The results of the testing prcedures can be found [here](https://docs.google.com/spreadsheets/d/1MXG4cFjO-vgku2RB4azp_uSs3hObE3Ms83dnKNmJe8w/edit#gid=0)
+  The results of the testing procedures can be found [here](https://docs.google.com/spreadsheets/d/1MXG4cFjO-vgku2RB4azp_uSs3hObE3Ms83dnKNmJe8w/edit#gid=0)
 
 ### Desktop
   
-  Google Chrome: All aspects of the site work perfectly fine. Pages load quickly, all features are working and found no problems with CRUD, logging in or out, signing up, paying for each service etc.<br>
-  Mozilla Firefox: All aspects of the site work perfectly fine. Pages load quickly, all features are working and found no problems with CRUD, logging in or out, signing up, paying for each service etc.<br>
+  Google Chrome: All aspects of the site work perfectly fine. Pages load quickly, all features are working and no problems found with CRUD, logging in or out, signing up, paying for each service etc.<br>
+  Mozilla Firefox: All aspects of the site work perfectly fine. Pages load quickly, all features are working and no problems found with CRUD, logging in or out, signing up, paying for each service etc.<br>
 
   * Every button and link works and redirects to the next page quickly<br>
   * URL's load correctly on the Services page<br>
@@ -174,13 +174,13 @@ All remaining root directory files passed through PEP8 without errors
 * Two errors remain in Chrome dev tools Console on the live version of the site. <br>
     - Two of these errors relate to AWS CORS policy and sitewebmanifest within S3.<br>
     - Although I have tried to research these issues, I have not found a cure, thus these errors remain.<br>
-    - The functionality of the site is not affected by these errors.<br>
+    - The functionality of the site is not compromised by these errors.<br>
 
 **Fixed bugs**
 
 * While testing on safari, a bug was found with dark mode switched on, relating to the form input not showing any text at all.
     - This was a simple fix by setting text-input colour to #000 (black).<br>
-    - There was an error to do with bootstrap.scrollspy, this was found in the scripts.js file from bootstrap this is necessary for the site but threw an error anyway. The fix for this was removing the if statement within the mainNav scroll spy code. The site functions as normal.<br>
-    - Another error I kept getting in the console was for mailchimp, not being able to load the `mc-validate.js` file correctly. I moved the script to the bottom of the base.html file and that cured the problem.
+* There was an error to do with bootstrap.scrollspy, this was found in the scripts.js file from bootstrap this is necessary for the site but threw an error anyway. The fix for this was removing the if statement within the mainNav scroll spy code. The site functions as normal.<br>
+* Another error I kept getting in the console was for mailchimp, not being able to load the `mc-validate.js` file correctly. I moved the script to the bottom of the base.html file and that cured the problem.
 
-To navigate back to the main README click [here](README.md)
+To navigate back to the README click [here](README.md)

@@ -86,8 +86,6 @@ Take the stress out of vehicle servicing and repairs with our simple revolutiona
 
 All functionality and development of this project were managed using **Trello** (https://trello.com/b/Ha79yDqn/motor-werks-pp5)
 
-* Credentials to this tool will be provided during submission
-
 ### 3. Structure
 
 * A clear and straightforward layout is in place to ensure users can navigate intuitively and have a leisurely experience
@@ -97,7 +95,7 @@ All functionality and development of this project were managed using **Trello** 
 
 ### 4. Skeleton
 
-* Wireframes created with Balsamiq. <br>
+* Wireframes created with Balsamiq <br>
 * The project was developed from initial wireframes, and some modifications were made during the development process in response to user feedback
 
 <details>
@@ -122,9 +120,9 @@ All functionality and development of this project were managed using **Trello** 
 
 * Colours
 
-- I used [Coolors](https://coolors.co/) to randomly generate a colour palette for this project.<br>
-I went bold and arguably opposite colours for this project.
-The main colours are Light and dark purple with light green accents and text.
+- I used [Coolors](https://coolors.co/) to randomly generate a colour palette for this project<br>
+- I went bold and arguably opposite colours for this project<br>
+- The main colours are light and dark purple with light green accents and text
 <details>
 <summary>Click to see Colours:</summary>
 <br>
@@ -136,9 +134,10 @@ The main colours are Light and dark purple with light green accents and text.
 
 **Font Selection**
  
-Two fonts were chosen with [Google Fonts](https://fonts.google.com/) to be used across the entire site.
+- Two fonts were chosen with [Google Fonts](https://fonts.google.com/) to be used across the entire site
 
-The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, buttons and paragraphs.
+- The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, buttons and paragraphs
+
 <details>
 <summary>Click to see Font style:</summary>
 <br>
@@ -150,8 +149,8 @@ The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, but
 
 ## Ecommerce Buisness Model
 
-  * For the purposes of the assessment a mock Facebook page was created to represent the company on a social media platform. 
-   - The Facebook page includes links to the Motor-werks website to drive traffic from the social network to the site. 
+  * For the purposes of the assessment a mock Facebook page was created to represent the company on a social media platform: 
+      - The Facebook page includes links to the Motor-werks website to drive traffic from the social network to the site. 
    <details>
   <summary>Social media buisness page</summary>
   <br>
@@ -188,9 +187,9 @@ The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, but
 1. Home page consists of: 
  - A welcome message (alternative message if user is logged in, see images below)
  - The purpose of the site
- - Two images, 
+ - Two images,
     * One motor-werks logo
-    * One image of an audi R8 in the dark with lights on (Removed on smaller screen sizes)
+    * One image of an audi R8 in the dark with lights on (removed on smaller screen sizes)
 - A button to login if user is logged out or has yet to sign up along with a button to view services
 - A button to view services if the user is logged in
 <br>
@@ -214,7 +213,7 @@ The chosen fonts were 'Uchen', with serif as back up fonts for lists, forms, but
 3. Services is available to view for all users (logged in or not), however, the services page is read-only until<br>
 the user logs in, or signs up
 
-4. Collapsed navbar on smaller devices to wrap in all options and assure better navbar design.
+4. Collapsed navbar on smaller devices to wrap in all options and ensure better navbar design.
   - Rounded bottom left edge is part of the site-wide design 
 
   <img width="400" src="static/assets/images/README-images/collapsed-navbar.png">
@@ -222,7 +221,7 @@ the user logs in, or signs up
 
 ### **Services page**
 
-1. On this page, users can view all available services
+1. On this page, users can view all available services:
   - If the user is not logged in, a login button will be available
   - If the user is logged in, a GO BACK button will be available
 <br>
@@ -231,7 +230,7 @@ the user logs in, or signs up
 <br>
 <img width="400" src="static/assets/images/README-images/loggedinservice.png">
 
-* Each button will take the user to the relevant service they wish to view which are,
+* Each button will take the user to the relevant service they wish to view which are:
   - `Brake service`
   - `Major Service`
   - `Minor Service`
@@ -240,7 +239,7 @@ the user logs in, or signs up
 <br>
 
   
-* Upon the user pressing a button, they will be taken to the `service-detail` page for the chosen service,
+* Upon the user pressing a button, they will be taken to the `service-detail` page for the chosen service:
   - Once again, if the user is logged in, a button `Buy Now` will appear within the detail card
   - If the user is not logged in, the card is read-only with a request 'Please login in to purchase this service' and a login button
 <br>
@@ -251,11 +250,10 @@ the user logs in, or signs up
 ### **Payments (STRIPE)**
 
 * After the `logged in` user has the clicked `Buy Now!` button on the service detail page,
-<br>
-  the user is taken to a `Please confirm if you wish to continue with your purchase` page.
+  the user is taken to a `Please confirm if you wish to continue with your purchase` page
 
-  * The user is then taken directly to the [Stripe.com](https://stripe.com/gb) payment window.
-   - Due to the nature of this project, only test payments are available.
+* The user is then taken directly to the [Stripe.com](https://stripe.com/gb) payment window
+   - Due to the nature of this project, only test payments are available
    - Payment information is:
       - `4242 4242 4242 4242` (card number)
       - `04/24` (MM/YY)
@@ -265,13 +263,17 @@ the user logs in, or signs up
   <br>
     <img width="600" src="static/assets/images/README-images/stripepaymentwindow.png">
   <br>
-  * After entering the information above and clicking `Pay`,<br>
-    the user is returned back to the site, to a payment confirmation page
+
+* After entering the information above and clicking 'Pay',<br>
+    the user is returned to the site to a payment confirmation page
+
   <br>
     <img width="600" src="static/assets/images/README-images/paymentconfirmation.png">
   <br>
-  * If, however, the payment failed, or the payment cancelled,<br>
+
+* If, however, the payment failed, or the payment cancelled,<br>
     the user is returned back to the site, to a payment cancelled page
+
   <br>
     <img width="600" src="static/assets/images/README-images/paymentfailed.png">
   <br>
@@ -316,7 +318,7 @@ the user logs in, or signs up
 
 ### **Service history page (incorporated within the profile page)**
 
-* The service history is available only to the logged in user,
+* The service history is available only to the logged in user:
    - Everytime a `Service` is purchased, the date and type of service purchased will be stored within the profile page next to the logged in users information.
 
   <br>
@@ -536,9 +538,9 @@ Press Enter. Your local clone will be created
 
 - Code institute for the amazing Tutors on the course, Scott, Ger and Sean!
 - My excellent Mentor Ben Kavanagh, [BAK2K3](https://github.com/BAK2K3) for his patience, excellent advice on my code, pushing me back on track
-    when I threatened to 'throw in the towel', taking time out of his own day and duties to answer ALL of my questions with absolute perfection, and just generally being a Python genius! I cannot thank you enough! "One last push!!"
+    when I felt like 'throwing in the towel', taking time out of his own day and duties to answer ALL of my questions with absolute perfection, and just generally being a Python genius! I cannot thank you enough! "One last push!!"
 - Matt Bodden [MattBCoding](https://github.com/MattBCoding), Yet again for being an absolute genius at pointing out the obvious.
 Thanks Matt!
 - My family for their support, patience and testing
-- My wonderful Wife for being my personal spell checker/grammar police and for listening to me when I needed to blow off steam!
+- My wonderful wife for being my personal spell checker/grammar police and for listening to me when I needed to blow off steam!
 - Everybody on Slack for tips, advice, quick fixes and support
