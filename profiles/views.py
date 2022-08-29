@@ -3,11 +3,11 @@
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth import get_user_model
-from django.views.generic.base import TemplateView, View
+from django.views.generic.base import TemplateView
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from .forms import UserForm
 from .models import UserProfile
 from services.models import ServiceHistory
@@ -16,7 +16,7 @@ from services.models import ServiceHistory
 user = get_user_model()
 
 
-class ProfileView(View):
+class ProfileView(TemplateView):
     """ Renders the profile in a form """
     model = UserProfile
     form = UserForm
@@ -26,6 +26,12 @@ class ProfileView(View):
     def form_valid(self, form):
         form.instance.booked_by = self.request.user
         return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['history'] = ServiceHistory.objects.filter(booked_by=self.request.user)
+        context['form'] = UserForm(instance=self.request.user.userprofile)
+        return context
 
 
 class UpdateProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -55,19 +61,6 @@ class UpdateProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def test_func(self):
         self.object = self.get_object()
         return self.object.user == self.request.user
-
-
-class ServiceHistoryView(View):
-    """ Renders user order history within the profile page """
-    model = ServiceHistory
-    fields = ('order_date',
-              'service_type')
-    template_name = 'profiles/profile.html'
-
-    def get(self, request, *args, **kwargs):
-        user = self.request.user
-        history = ServiceHistory.objects.filter(booked_by=user)
-        return render(request, self.template_name, {'user': user, 'history': history})  # noqa
 
 
 class DeleteProfile(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
