@@ -29,7 +29,7 @@ class ProfileView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['history'] = ServiceHistory.objects.filter(booked_by=self.request.user)
+        context['history'] = ServiceHistory.objects.filter(booked_by=self.request.user)  # noqa
         context['form'] = UserForm(instance=self.request.user.userprofile)
         return context
 
