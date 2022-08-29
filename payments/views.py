@@ -1,6 +1,7 @@
 """ Payments app views file """
 
 import stripe
+import datetime
 from django.conf import settings
 from django.http.response import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -29,8 +30,8 @@ class SuccessView(UserPassesTestMixin, TemplateView):
                 line_item = stripe.checkout.Session.list_line_items(session_id, limit=1)
                 service_name = line_item['data'][0].description
                 service = Services.objects.get(service_name=service_name)
-                profile = UserProfile.objects.get(user=self.request.user)
-                ServiceHistory.object.create(booked_by=profile, service_type=service)
+                order_date = datetime.datetime.now()
+                ServiceHistory.objects.create(booked_by=self.request.user, service_type=service, order_date=order_date)
                 return True
             else:
                 return False
