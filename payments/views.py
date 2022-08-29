@@ -8,7 +8,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import TemplateView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from services.models import Services, ServiceHistory
-from profiles.models import UserProfile
 
 
 class PaymentsView(TemplateView):
@@ -17,7 +16,8 @@ class PaymentsView(TemplateView):
 
 
 class SuccessView(UserPassesTestMixin, TemplateView):
-    """ Renders the payments success page """
+    """ Retrieves the payments success from stripe
+        then adds the purchased service to the users Service History """
     template_name = 'payments/success.html'
 
     def test_func(self):
@@ -27,16 +27,17 @@ class SuccessView(UserPassesTestMixin, TemplateView):
         try:
             session = stripe.checkout.Session.retrieve(session_id)
             if session['payment_status'] == 'paid':
-                line_item = stripe.checkout.Session.list_line_items(session_id, limit=1)
+                line_item = stripe.checkout.Session.list_line_items(session_id, limit=1)  # noqa
                 service_name = line_item['data'][0].description
                 service = Services.objects.get(service_name=service_name)
                 order_date = datetime.datetime.now()
-                ServiceHistory.objects.create(booked_by=self.request.user, service_type=service, order_date=order_date)
+                ServiceHistory.objects.create(booked_by=self.request.user, service_type=service, order_date=order_date)  # noqa
                 return True
             else:
                 return False
-        except: 
+        except:  # noqa
             return False
+
 
 class CancelledView(TemplateView):
     """ Renders the payments cancelled/failed page """
