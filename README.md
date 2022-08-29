@@ -314,6 +314,15 @@ the user logs in, or signs up
     <br>
   1.4.1. If the user attempts to log back in with the recently deleted information, `The e-mail address and/or password you specified are not correct` message will appear. The user must signup again.
 
+### **Service history page (incorporated within the profile page)**
+
+* The service history is available only to the logged in user,
+   - Everytime a `Service` is purchased, the date and type of service purchased will be stored within the profile page next to the logged in users information.
+
+  <br>
+  <img width="400" src="static/assets/images/README-images/service-history.png">
+  <br>
+
 ### **Custom 500 Internal server error**
 
 * I have created a custom 500 error page to redirect to if there are any issues with the database including a button to redirect back to home
@@ -520,7 +529,7 @@ Press Enter. Your local clone will be created
 ### Code
 
 * Mailchimp and form code was used for the signup newsletter in the footer of the site [mailchimp.com](https://mailchimp.com/)
-* Stripe javascript and settings were used for payments within the site [Stripe.com](https://stripe.com/)
+* Stripe javascript and settings were used for payments within the site [Stripe.com](https://stripe.com/) <br>and from [Testdriven.io](https://Testdriven.io/)
 
 
 ## Acknowledgements
