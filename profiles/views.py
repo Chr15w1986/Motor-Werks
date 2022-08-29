@@ -57,7 +57,7 @@ class UpdateProfile(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.object.user == self.request.user
 
 
-class ServiceHistory(View):
+class ServiceHistoryView(View):
     """ Renders user order history within the profile page """
     model = ServiceHistory
     fields = ('order_date',
@@ -65,8 +65,8 @@ class ServiceHistory(View):
     template_name = 'profiles/profile.html'
 
     def get(self, request, *args, **kwargs):
-        user = UserProfile.objects.get(username=request.user.username)
-        history = ServiceHistory.objects.filter(user=user)
+        user = self.request.user
+        history = ServiceHistory.objects.filter(booked_by=user)
         return render(request, self.template_name, {'user': user, 'history': history})  # noqa
 
 

@@ -11,8 +11,11 @@
 			<h1 class="mb-1 border-dark">- Service history -</h1>
 			<p class="mx-auto mt-0 mb-1 border-dark px-5"> Customer: {{ user.userprofile.first_name }}</p>
 			<p class="mx-auto mt-0 mb-1 border-dark"> Registration: {{ user.userprofile.vehicle_reg }}</p>
-			<p class="mx-auto mt-0 mb-1 border-dark"> Order date: {{ user.servicehistory.order_date }}</p>
-			<p class="mx-auto mt-0 mb-1 border border-dark px-5"> Service Required: {{ user.servicehistory.service_type }}</p>
+			{% for history in history %}
+			<p class="mx-auto mt-0 mb-1 border-dark"> Order date: {{ history.order_date }}</p>
+			<p class="mx-auto mt-0 mb-1 border border-dark px-5"> Service Required: {{ history.service_type }}</p>
+		    {% endfor %}
+			
 			<br>
 			<br>
 			<br>
