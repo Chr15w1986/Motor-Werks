@@ -21,13 +21,13 @@ class SuccessView(UserPassesTestMixin, TemplateView):
 
     def test_func(self):
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        try: 
-            session_id = self.request.GET['session_id']
+
+        session_id = self.request.GET['session_id']
+        try:
             session = stripe.checkout.Session.retrieve(session_id)
             if session['payment_status'] == 'paid':
-                print(session)
-                service_name = session['metadata']['service']
-                print(service_name)
+                line_item = stripe.checkout.Session.list_line_items(session_id, limit=1)
+                service_name = line_item['data'][0].description
                 service = Services.objects.get(service_name=service_name)
                 profile = UserProfile.objects.get(user=self.request.user)
                 ServiceHistory.object.create(booked_by=profile, service_type=service)
@@ -36,7 +36,6 @@ class SuccessView(UserPassesTestMixin, TemplateView):
                 return False
         except: 
             return False
-
 
 class CancelledView(TemplateView):
     """ Renders the payments cancelled/failed page """
