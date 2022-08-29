@@ -87,7 +87,7 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
                     <li class="nav-item"><a class="nav-link"
-                            href="{% url 'update-profile' user.userprofile.id %}">{{ user.username }}'s Profile</a></li>
+                            href="{% url 'profiles' %}">{{ user.username }}'s Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
 
                     {% else %}
