@@ -331,6 +331,8 @@ the user logs in, or signs up
 
 * I have created a custom 403 forbidden error page to redirect to if there are any instances where a user tries to access a secure area of the site (e.g admin), including a button to redirect back to home
 
+<img width="500" src="static/assets/images/README-images/403-error.png">
+
 ### **Custom 405 Method not allowed page**
 
 * I have also created a custom 405 method not allowed error page to redirect to if there are any instances where the server knows the request method, but the target resource doesn't support the method, including a button to redirect back to home
