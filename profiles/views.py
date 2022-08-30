@@ -16,7 +16,7 @@ from services.models import ServiceHistory
 user = get_user_model()
 
 
-class ProfileView(TemplateView):
+class ProfileView(LoginRequiredMixin, TemplateView):
     """ Renders the profile in a form """
     model = UserProfile
     form = UserForm
