@@ -3,11 +3,13 @@
 import stripe
 import datetime
 from django.conf import settings
-from django.http.response import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import TemplateView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from services.models import Services, ServiceHistory
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 class PaymentsView(TemplateView):
@@ -21,8 +23,6 @@ class SuccessView(UserPassesTestMixin, TemplateView):
     template_name = 'payments/success.html'
 
     def test_func(self):
-        stripe.api_key = settings.STRIPE_SECRET_KEY
-
         session_id = self.request.GET['session_id']
         try:
             session = stripe.checkout.Session.retrieve(session_id)
@@ -47,7 +47,6 @@ class CancelledView(TemplateView):
 @csrf_exempt
 # Taken from Testdriven.io
 def stripe_config(request):
-
     if request.method == 'GET':
         stripe_config_data = {'publicKey': settings.STRIPE_PUBLISHABLE_KEY}
         return JsonResponse(stripe_config_data, safe=False)
@@ -57,11 +56,9 @@ def stripe_config(request):
 @csrf_exempt
 # Taken from Testdriven.io
 def create_checkout_session(request):
-
     if request.method == 'GET':
         domain_url = settings.DOMAIN_URL
-        stripe.api_key = settings.STRIPE_SECRET_KEY
-        # Extract the PK from the GET Pararameter (?pk=)
+        # Extract the PK from the GET Parameter (?pk=)
         service = Services.objects.get(pk=request.GET['pk'])
         try:
             checkout_session = stripe.checkout.Session.create(
@@ -85,7 +82,6 @@ def create_checkout_session(request):
 # Stripe webhook handler
 @csrf_exempt
 def stripe_webhook(request):
-    stripe.api_key = settings.STRIPE_SECRET_KEY
     endpoint_secret = settings.STRIPE_ENDPOINT_SECRET
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
