@@ -5,16 +5,17 @@
 
 <section class="section">
     <div class="container">
-        <h3>Thankyou {{ user.username }}, Your payment has been successful.</h3>
+        <h3>Thank you, {{ user.username }}. Your payment has been successful.</h3>
         <hr>
-        <h5>You do not need to do anything else,</h5>
-        <h5>Please make sure your contact details are up-to-date and</h5>
-        <h5>We will be in touch shortly.</h5>
+        <h5>You do not need to do anything else.</h5>
+        <h5>Please make sure your contact details are up-to-date, and</h5>
+        <h5>we will be in touch shortly.</h5>
         <br>
+        <p id="countdown">Redirecting in 5:00</p>
         <a class="btn btn-secondary" href="{% url 'profiles' %}">GO HOME</a>
     </div>
 </section>
 
-<!-- JS Redirect script -->
 <script src="{% static 'js/redirect.js' %}"></script>
+
 {% endblock %}
