@@ -17,5 +17,6 @@ function updateCountdown() {
 
     if (countdownTime <= 0) {
         clearInterval(countdownInterval);
+        window.location.href = "/";
     }
 }
