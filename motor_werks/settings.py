@@ -34,7 +34,8 @@ else:
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 ALLOWED_HOSTS = ['motor-werks.herokuapp.com', 'localhost',
-                 'localhost:8000', '127.0.0.1', '127.0.0.1:8000']
+                 'localhost:8000', '127.0.0.1', '127.0.0.1:8000',
+                 '8000-chr15w1986-motorwerks-zbjlzvcm7at.ws-eu100.gitpod.io']
 
 # Application definition
 
