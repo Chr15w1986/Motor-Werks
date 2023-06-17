@@ -1,22 +1,28 @@
 // Simple timed redirect if the user does not click the home button
 // Set to 5 seconds
 
-var countdownElement = document.getElementById('countdown');
-var countdownTime = 5;
-countdownElement.innerText = 'Redirecting in: ' + countdownTime;
+const countdownElement = document.getElementById('countdown');
+const form = document.getElementById('return-form');
+const delay = 5000;
+let countdown = 5;
 
-setTimeout(function() {
+const redirectToHomePage = () => {
     window.location.href = "/";
-}, 5000); // Redirect after 5 seconds (5000 milliseconds)
+};
 
-var countdownInterval = setInterval(updateCountdown, 1000); // Update every second
+const updateCountdown = () => {
+    countdownElement.textContent = countdown;
+    countdown--;
 
-function updateCountdown() {
-    countdownTime--;
-    countdownElement.innerText = 'Redirecting in: ' + countdownTime;
-
-    if (countdownTime <= 0) {
-        clearInterval(countdownInterval);
-        window.location.href = "/";
+    if (countdown >= 0) {
+        setTimeout(updateCountdown, 1000);
+    } else {
+        redirectToHomePage();
     }
-}
+};
+
+setTimeout(updateCountdown, 1000);
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+});
