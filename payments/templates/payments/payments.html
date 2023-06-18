@@ -20,29 +20,7 @@
 	<br>
 	<a class="btn btn-danger" href="{% url 'services' %}">Cancel</a>
 </section>
-<style>
-	#paymentModal {
-		display: none;
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 70%;
-		height: 280px;
-		padding: 20px;
-		background-color: #28112B;
-		border-radius: 5px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	}
 
-	#paymentForm {
-		margin-top: 20px;
-	}
-
-	#cardElement {
-		margin-bottom: 30px;
-	}
-</style>
 <script>
 	// Stripe payments script JS taken from TestDriven.io
 	// Get stripe publishable key
