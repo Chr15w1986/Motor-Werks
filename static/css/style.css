@@ -354,6 +354,30 @@ label.requiredField {
   background-color: #fff;
 }
 
+/* Payments / Stripe modal */
+
+#paymentModal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 280px;
+  padding: 20px;
+  background-color: #28112B;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#paymentForm {
+  margin-top: 20px;
+}
+
+#cardElement {
+  margin-bottom: 30px;
+}
+
 /* Fix for some IOS devices showing white text on white background 
    within form fields, Specifically Apple Iphone 11pro, XR and 13 */
 input[type=text] { 
@@ -364,15 +388,6 @@ input[type=text] {
   background-color: #7a5e76;
   border-radius: 0 2rem 0 2rem;
 }
-
-/*------------------------------ Social/contact links */
-/* .contact-section {
-  position: relative;
-  width: 100%;
-  background: linear-gradient(to top, rgba(94, 93, 92, 0.3) 0%, rgba(69, 54, 67, 0.7) 75%, #000 100%);
-  background-attachment: scroll;
-  background-size: cover;
-} */
 
 .contact-section .social {
   margin-top: 0.05rem;

@@ -5,43 +5,123 @@
 
 
 <section class="section">
-    <div class="container">
-        <h4>Please confirm if you wish to continue with your purchase</h4>
-        <button class="btn btn-success" id="confirmBtn">Confirm purchase</button>
-    </div>
-    <br>
-    <a class="btn btn-danger" href="{% url 'services' %}">Cancel</a>
+	<div class="container">
+		<h4>Enter your card details with Stripe to finalize purchase</h4>
+		<!-- Add a button to trigger the payment modal -->
+		<button id="payButton" class="btn btn-success">Pay with Stripe</button>
+		<!-- Add a hidden div to contain the payment form -->
+		<div id="paymentModal" style="display: none;">
+			<form id="paymentForm">
+				<div id="cardElement"></div>
+				<button class="btn btn-success" id="confirmBtn" type="submit">Confirm purchase</button>
+			</form>
+		</div>
+	</div>
+	<br>
+	<a class="btn btn-danger" href="{% url 'services' %}">Cancel</a>
 </section>
+<style>
+	#paymentModal {
+		display: none;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 70%;
+		height: 280px;
+		padding: 20px;
+		background-color: #28112B;
+		border-radius: 5px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
 
+	#paymentForm {
+		margin-top: 20px;
+	}
+
+	#cardElement {
+		margin-bottom: 30px;
+	}
+</style>
 <script>
-    // Stripe payments script JS taken from TestDriven.io
-// Get stripe publishable key
-fetch("/payments/config/")
-.then((result) => { return result.json(); })
-.then((data) => {
-  // Initialize Stripe.js
-  const stripe = Stripe(data.publicKey);
+	// Stripe payments script JS taken from TestDriven.io
+	// Get stripe publishable key
+	fetch("/payments/config/")
+		.then((result) => {
+			return result.json();
+		})
+		.then((data) => {
+			// Initialize Stripe.js
+			const stripe = Stripe(data.publicKey);
+			const elements = stripe.elements();
 
-    // Event handler
-    document.querySelector("#confirmBtn").addEventListener("click", () => {
-        // Get Checkout Session ID
-        // Pass in the pk from the URL
-        fetch("/payments/create-checkout-session/?pk={{ request.GET.pk }}")
-        .then((result) => { return result.json(); })
-        .then((data) => {
-            // If route passed error, throw an Error. 
-            if (data.error) {
-              throw Error(data.error);
-          } else {
-            // Redirect to Stripe Checkout
-            return stripe.redirectToCheckout({sessionId: data.sessionId});
-          }
-        })
-        .then((res) => {
-        console.log(res);
-        });
-    });
-});
+			// Create a card element
+			const cardElement = elements.create('card', {
+				style: {
+					base: {
+						color: '#fff', // Set the text color to white
+					},
+				},
+			});
+			cardElement.mount('#cardElement');
+
+			// Event handler for the pay button
+			document.querySelector("#payButton").addEventListener("click", (event) => {
+				event.preventDefault();
+
+				// Show the payment modal
+				document.getElementById("paymentModal").style.display = "block";
+			});
+
+			// Event handler for the payment form submission
+			document.querySelector("#paymentForm").addEventListener("submit", (event) => {
+				event.preventDefault();
+
+				// Disable the submit button to prevent multiple submissions
+				document.querySelector("#paymentForm button[type='submit']").disabled = true;
+
+				// Create a payment method from the card element
+				stripe.createPaymentMethod({
+						type: 'card',
+						card: cardElement,
+					})
+					.then((result) => {
+						if (result.error) {
+							// Handle any errors during payment method creation
+							throw Error(result.error.message);
+						} else {
+							// Call your server endpoint to process the payment method and create a charge or subscription
+							return fetch('/payments/process-payment', {
+								method: 'POST',
+								headers: {
+									'Content-Type': 'application/json'
+								},
+								body: JSON.stringify({
+									paymentMethodId: result.paymentMethod.id,
+								})
+							});
+						}
+					})
+					.then((result) => {
+						// Handle the server response
+						return result.json();
+					})
+					.then((data) => {
+						// Handle the success or error response from your server
+						if (data.success) {
+							// Payment successful, redirect to the success page
+							window.location.href = "/payments/success";
+						} else {
+							// Payment failed, display the error message
+							throw Error(data.error);
+						}
+					})
+					.catch((error) => {
+						// Handle any errors during the payment process
+						alert("Payment error: " + error.message);
+					});
+			});
+		});
 </script>
 
 
