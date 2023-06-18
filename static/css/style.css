@@ -366,7 +366,7 @@ label.requiredField {
   height: 280px;
   padding: 20px;
   background-color: #28112B;
-  border-radius: 5px;
+  border-radius: 0 2rem 0 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
